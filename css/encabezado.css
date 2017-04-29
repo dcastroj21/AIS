@@ -1,0 +1,400 @@
+@charset "utf-8";
+/* CSS Document */
+
+p {display: inline;}
+
+									/* 		.CLASS  #ID    	*/
+
+.cabecera{           background-color: #FEEF00;           color:black;           padding:30px 20px;           }
+
+.imagen_taxi{           position:absolute;           top:0.625em;           right:0.313em;           }
+
+.titulo{           margin: 0em;           top: 0.313em;           font-size:3em;           }
+
+.parametros{           padding-left: 130px;           }
+
+.historicoinicio{		position:absolute; 	right: 0.1em;	 top: 7.25em;	}
+
+.historicofinal{		position:absolute; 	right: 0.1em;	 top: 9.25em;	}
+
+.boton{		position:absolute; 	right: 5em;	 top: 11.25em;	}
+
+.DivTodo{	 position: relative; width: 300px; background-color: red; margin-top: 20px; margin-left: 10px; border-bottom: 20px;	}
+
+#fila_longitud,#fila_latitud,#fila_fecha,#fila_hora,#peso{ }
+
+#googleMap{ position: absolute;  width:100%; height:100%;  	}
+
+#autoc {        width: 175px; height: 25px; box-sizing: border-box; border-radius: 5px;  font-size: 15px; border-color: red; }
+
+#contenedor div{            float:left;           }
+
+#Boton_Real {	position:absolute; 	right: 1.3em;	 top: 2.25em;}
+
+#Pulsalo {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 450px;
+}
+
+#markerfecha2 {
+    position: absolute;
+    margin-left: 80px;
+    margin-top: 14px;
+    width: 20px;
+    height: 20px;
+}
+
+#Pulsalo2 {
+    position: relative;
+    display:inline-block;
+    color: white;
+    font-weight: bold;
+    z-index: -1;
+}
+
+#markerfecha {
+    display:inline-block;
+    width: 13px;
+    height: 13px;
+}
+
+#Metros {
+    width: 175px;
+    height: 25px;
+    text-align:center;
+    background-color:transparent;
+    border: 1px solid #1E2172;
+    padding:5px;
+}
+
+#ListaCheckBoxes {
+    display:inline-block;
+    background-color: black;
+    z-index: 10;
+}
+
+.labels {
+     color: white;
+     background-color: black;
+     font-family: "Lucida Grande", "Arial", sans-serif;
+     font-size: 12px;
+     font-weight: bold;
+     text-align: center;
+     width: auto;
+     border: 2px solid black;
+     white-space: nowrap;
+}
+
+#seleccion {
+    color: black;
+    font-weight: bold;
+    display:none;
+}
+
+#Fecha_Inicio {
+    position: absolute;
+    margin-left: 170px;
+    margin-top: -30px;
+}
+
+#Fecha_Final {
+
+    position: absolute;
+    margin-left: -15px;
+    margin-top: -30px;
+
+}
+
+#Tiempo_Hora1 {
+    width: 39px;
+    text-align:center;
+    background-color: transparent;
+    border:none;
+    cursor:pointer;
+}
+
+#Tiempo_Hora2 {
+    width: 39px;
+    text-align:center;
+    background-color:transparent;
+    border:none;
+    cursor:pointer;
+}
+.TextoHistorico{
+
+    color:white;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#Tiempo_Minuto1 {
+    width: 15px;
+    text-align:center;
+    background-color: transparent;
+    border:none;
+    cursor:pointer;
+}
+
+#Tiempo_Minuto2 {
+    width: 12px;
+    text-align:center;
+    background-color: transparent;
+    border:none;
+    cursor:pointer;
+}
+
+#mensaje {
+
+  display: block;
+  width: 100%;
+  height: 150px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+
+}
+
+#divmenu {
+    background-color:black;
+    width:265px;
+    height:inherit;
+    position:fixed;
+    z-index: 999;
+    margin-left:50%; /*400*/
+    margin-top:-2810px;
+}
+
+.AnimacionDerecha {
+
+ /* animation-duration: 2s;
+  animation-name: Steven;*/
+}
+
+
+
+
+#btAdd {
+    background-color: #00c7fc;
+    color: white;
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+#btAdd:hover{
+    color:rebeccapurple;
+}
+
+#Seleccionar {
+
+    background-color: #00c7fc;
+    color: white;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    padding: 2px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid transparent;
+    margin-top:30px;
+}
+#Seleccionar:hover{
+    color:rebeccapurple;
+}
+
+#Seleccionar2 {
+
+    background-color: #00c7fc;
+    color: white;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    padding: 2px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid transparent;
+    margin-top:5px;
+}
+#Seleccionar:hover{
+    color:rebeccapurple;
+}
+
+#Imagen{
+
+    margin-top: 20px;
+    background-color: black;
+    display: none;
+}
+
+#Boton_Real23 {
+
+    background-color: #00c7fc;
+    color: white;
+    display: inline-block;
+    padding: 2px 15px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+
+}
+#Boton_Real23:hover{
+   color:rebeccapurple;
+}
+
+#Ubicar {
+    height:20px;
+    background-color: #00c7fc;
+    color: white;
+    display: inline-block;
+    padding:0 15px;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-weight: bold;
+}
+#Ubicar:hover{
+    color:rebeccapurple;
+}
+
+#Cerrar {
+    margin-left:-13.5%;
+    position: absolute;
+    background-color: #00c7fc;
+    color: white;
+    display: inline-block;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-weight: bold;
+}
+
+#Distancia_Recorrida {
+    height:20px;
+    background-color: #00c7fc;
+    color: white;
+    display: inline-block;
+    padding:0 15px;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-weight: bold;
+}
+
+#MenuDistancia {
+    background-color:black;
+    position:absolute;
+    display: none;
+    z-index: 10;
+    margin-left:185px;
+    margin-top:-350px;
+}
+
+#Cerrar_Distancia {
+    background-color: #00c7fc;
+    color: white;
+    display: inline-block;
+    font-size: 13px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-weight: bold;
+    float:left;
+}
+
+
+#Marcar_Recorrido:hover{
+    color:rebeccapurple;
+}
+
+#ListaPesos {
+    height:auto;
+    width:auto;
+    background-color: #D7D7D7;
+}
+
+#Boton_grafica {
+    background-color: #00c7fc;
+    color: white;
+    display: inline-block;
+    font-size: 13px;
+    padding: 3px 5px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+#Boton_grafica:hover{
+    color:rebeccapurple;
+}
+
+#Saltos {
+    width: 175px;
+    height: 25px;
+    text-align:center;
+    background-color:transparent;
+    border: 1px solid #1E2172;
+    padding:5px;
+}
+
+.Botones_Mapa {
+
+    background-color: #00c7fc;
+    color: white;
+    display: inline-block;
+    font-size: 13px;
+    padding: 3px 5px;
+    width: 120px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-weight: bold;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+.Botones_Mapa:hover{
+    color:rebeccapurple;
+}
+
+#Cerrar_Sesion:hover {
+    color:rebeccapurple;
+}
+
+#ListaPesos3 {
+    height:auto;
+    width:auto;
+    background-color: #D7D7D7;
+}
+
+.Botones_Zero {
+    
+    background-color: #00c7fc;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+    padding: 5px 5px;
+    width: 50px;
+    height: 8%;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-weight: bold;
+}
+
+.Botones_Zero:hover{
+    color:rebeccapurple;
+}

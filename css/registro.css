@@ -1,0 +1,27 @@
+*= GENERAL STYLES
+--------------------------------------------------------*/
+ 
+
+
+input{
+  border: 1px dotted #999;
+  border-radius: 0;
+
+  -webkit-appearance: none;
+}
+
+
+
+
+#botones-popup{
+    padding: 8px 10px;
+    background: #4479BA;
+    color: #FFF;
+    font-family: 'Pacifico', cursive;
+}
+ 
+#window{
+
+    text-align: center;
+    color:white;
+}
