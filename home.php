@@ -128,7 +128,7 @@ th,td,tr{
                     <ul id="nav" class="nav navbar-nav">
                         <li class="current"><a href="#home">HOME</a></li>
                         <li><a href="javascript:void(0);" onclick="INICIAR_SESION();return false;">Mapa</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        
 
 
                     </ul>
