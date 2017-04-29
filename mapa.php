@@ -77,110 +77,11 @@ a {
 	z-index: 999; border: 8px solid #fff; margin-top: -100%; left: 40%;
   padding: 0px; position: fixed; width: auto; height:auto; background-color: #fff; border-radius: 3px;
 }
-
-
-
 </style>
 
 
  <div id="googleMap"></div>
 
- <input type = "button" class="Botones_Mapa" id="Marcar_Recorrido" value="Marcar Recorrido" onclick="flotante(1)">
- <input type = "button" class="Botones_Mapa" id="Reporte_Recorrido" value="Reporte Recorrido" onclick="flotante(6)">
- <input type = "button" class="Botones_Mapa" id="Boton_Rutas" value = "Cargar Recorrido" onclick="flotante(4);"/>
- <input type = "button" class="Botones_Mapa" id="Boton_Real24" value="Tiempo Real" onclick="flotante(3);">
- <input type ="button"  class="Botones_Mapa" id="Boton_grafica" value = 'Grafica tiempo real' onclick="promptForTwo(); return false;"/>
-
- <input type ="button" class="Botones_Zero" id="Boton_Zero" value = 'ZERO' onclick="Zero();"/>
-
- <input type = "button" class="Botones_Mapa" id="btHist" value="Historico" onclick="flotante(5)">
- <input type = "button" class="Botones_Mapa" id="Cerrar_Sesion" value="Cerrar Sesion" onclick="CerrarSesion();">
-
- <select id="seleccion" onChange="Centrar()"><option>Centrar Mapa</option></select>
- <p class="auto"><input type="text" id="autoc"/></p>
-
-<div id="ListaPesos"> </div>
-
-<div id="ListaPesos3">  <div id="ListaPesos2"></div>   </div>
-
-<!--<h1>Ventana flotante animada con javascript y jquery</h1>
-<h3><a onClick="flotante(1)">Abrir ventana</a></h3>-->
-
-<div id="contenedor2" style="display:none">
-
-  <div id="flotante"><h3>Seleccione el vehiculo</h3>
-      <div id="ListaCheckBoxes"></div>
-      <h5 style="margin-left:48%;margin-top:-14.5%;position:absolute;"><a onClick="flotante(2)">X</a></h5>
-   </div>
-  <div id="fondo" onClick="flotante(2);"></div>
-</div>
-
- <h3 style="font: italic bold 12px/15px Georgia, serif;color:red;background-color:white;display:none;width:90px;height:20px;" id="fila_latitud">00.00000</h3>
- <h3 style="font: italic bold 12px/15px Georgia, serif;color:red;background-color:white;display:none;width:90px;height:20px;" id="fila_longitud">-00.00000</h3>
- <h3 style="font: italic bold 12px/15px Georgia, serif;color:red;background-color:white;display:none;width:90px;height:20px;" id="fila_fecha">0000-00-00</h3>
- <h3 style="font: italic bold 12px/15px Georgia, serif;color:red;background-color:white;display:none;width:90px;height:20px;" id="fila_hora"> 00:00:00</h3>
- <h3 style="font: italic bold 12px/15px Georgia, serif;color:red;background-color:white;display:none;width:90px;height:20px;" id="peso">0kg</h3>
-
- <div id="divmenu" class="AnimacionDerecha">
-
-    <input type="button" id="Cerrar" value="X" onclick="OcultarHistoricos()">
-
-    <div style="display:inline-block;margin: 10px 0px 5px 0px;"> <h4 id="Pulsalo2">Consultar por Tiempo</h4>    </div>
-
-     <div style="display:block;margin: 10px 0px 0px 0px;">
-        <h5 class="TextoHistorico">FECHA INICIAL :</h5>
-        <h5 id="Fecha_Inicio2" onmouseover="Mostrar_Calendario1();" class="TextoHistorico">0000-00-00</h5>
-        <div style="margin:2px" id="Fecha_Inicio" onmouseleave="Ocultar_Calendario1();" ></div>
-        <input type="text"  id="Tiempo_Hora1" value="12 AM" class="TextoHistorico"><h5 style="color:white;margin-left:3px;">:</h5>
-        <input type="text"  id="Tiempo_Minuto1" value="00" class="TextoHistorico">
-     </div>
-
-     <div style="display:block;margin: 10px 0px 0px 0px;">
-       <h5 class="TextoHistorico">FECHA FINAL :</h5>
-       <h5 id="Fecha_Final2" onmouseover="Mostrar_Calendario2();" class="TextoHistorico">0000-00-00</h5>
-       <div  id="Fecha_Final" onmouseleave="Ocultar_Calendario2();"></div>
-        <input type="text"  id="Tiempo_Hora2" value="12 AM" class="TextoHistorico"><h5 style="color:white;margin-left:3px;">:</h5>
-        <input type="text"  id="Tiempo_Minuto2" value="00" class="TextoHistorico" >
-     </div>
-
-     <div style="display:block;margin: 10px 0px 0px 0px;">
-        <input id="Boton_Real23" type="button" value="CONSULTAR" onclick="Consulta_Hora_Marker(),OcultarHistoricos()"/>
-     </div>
-
-  <!--   <div style="display:block;margin: 10px 0px 0px 0px;">
-         <input type="text" id="Saltos" placeholder="Digite salto" style="font-size:13px;">
-     </div> -->
-
-     <div style="display:inline-block;margin: 10px 0px 5px 0px;"> <h4 id="Pulsalo2">Consultar por Ubicación</h4>    </div>
-
-     <div style="display:block;margin: 10px 0px 0px -10px;">
-        <input type="text" id="Metros" placeholder="Digite metros a la redonda" style="font-size:13px;">
-        <!--<input type="checkbox" id="markerfecha2"  onclick="Snap=!Snap;"><h3 id="Pulsalo">Snap</h3> -->
-     </div>
-
-     <div style="display:block;margin: 10px 0px 0px 0px;">
-       <input type="button" id="Ubicar" value="UBICAR MARKER" onclick="Consulta_Marker_Hora(),OcultarHistoricos()">
-     </div>
-
-     <div style="display:inline-block;margin: 10px 0px 10px 0px;">
-        <h4 id="Pulsalo2">Combinar Consultas</h4>
-        <input type="checkbox" id="markerfecha" onclick="Combinar=!Combinar;">
-     </div>
-
-    <!-- <div style="display:block;margin: 10px 0px 5px 0px;">
-       <input type="button" id="Distancia_Recorrida" value="Distancia Recorrida" onclick="MostrarDistancia(),OcultarHistoricos()">
-     </div> -->
-
-    </div>
-
-
- <img id="Imagen" src="images/ajax-loader.gif">
-
-<div id="MenuDistancia">
-    <input type="button" id="Cerrar_Distancia" value="X" onclick="OcultarDistancia()">
-    <div id="divGraph" style="margin:20px 20px;"></div>
-
-    </div>
 
   <script src="js/Funciones/CodigoMapa.js"></script>
 
