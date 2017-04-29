@@ -127,7 +127,7 @@ th,td,tr{
                 <nav class="collapse navigation navbar-collapse navbar-right" role="navigation">
                     <ul id="nav" class="nav navbar-nav">
                         <li class="current"><a href="#home">HOME</a></li>
-                        <li><a href="javascript:void(0);" onclick="INICIAR_SESION();return false;">Sign In</a></li>
+                        <li><a href="javascript:void(0);" onclick="INICIAR_SESION();return false;">Mapa</a></li>
                         <li><a href="#contact">Contact Us</a></li>
 
 
@@ -267,8 +267,8 @@ th,td,tr{
 function INICIAR_SESION() {
 
   var a = document.createElement("a");
-  a.target = "_blank";
-  a.href = "http://ticollcloud.ddns.net/AWS/INICIAR_SESION/inicio_sesion.php";
+  //a.target = "_blank";
+  a.href = "http://54.233.64.130/AIS/mapa.php";
   //a.href = "http://localhost/AWS-master/INICIAR_SESION/inicio_sesion.php";
   // a.href = "http://localhost/AWS/INICIAR_SESION/inicio_sesion.php";
 

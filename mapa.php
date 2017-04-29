@@ -1,9 +1,3 @@
-<?php
-session_start();
-if(!isset($_SESSION['user'])) {   echo '<script> window.location="INICIAR_SESION/inicio_sesion.php"; </script>';   }
-
-?>
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
