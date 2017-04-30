@@ -13,7 +13,7 @@ session_start();
     <meta charset="utf-8">
 
     <title>AIS project</title>
-    <link rel="shortcut icon" href="images/logo.ico">
+    <link rel="shortcut icon" href="images/taxi6.ico">
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
 
@@ -118,7 +118,7 @@ th,td,tr{
                 <!-- logo -->
                 <h1 class="navbar-brand">
                     <a href="#body">
-                        <img src="images/1.png" alt="Kasper Logo">
+                        <img src="images/logo.png" alt="Kasper Logo">
                     </a>
                 </h1>
                 <!-- /logo -->
