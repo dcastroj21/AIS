@@ -33,7 +33,7 @@ function ActualizarId_Barcos(){
   $.post("MySQL/mmsi.php").done(  function( data ) {
 
     Tabla = JSON.parse(data);
-
+    console.log(Tabla);
     dateNow = new Date().getTime();
 
     // for (i in Tabla){    if (Entro) {Marker_Real[i].setMap(null);}    Entro=1;
