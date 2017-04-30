@@ -26,6 +26,8 @@ MarkerInterval = setInterval(function(){ActualizarId_Barcos()},1000);
 
 function ActualizarId_Barcos(){
 
+
+
   $.post("MySQL/mmsi.php").done(  function( data ) {
 
     Tabla = JSON.parse(data);
@@ -33,6 +35,8 @@ function ActualizarId_Barcos(){
     dateNow = new Date().getTime();
 
     for (i in Tabla){
+
+    Marker_Real[i].setMap(null);
 
     myLatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
 
