@@ -134,7 +134,7 @@ console.log(map.getZoom());
                 "Velocidad: "+Tabla[i]['velocidad']+"<br>"+
                 "Curso: "+Tabla[i]['curso']+"<br>"+
                 "Fecha: "+Tabla[i]['max(fecha)']+"<br>"+
-                "Tiempo Transcurrido: "Ht+"horas"+Mt+"minutos"+St+"segundos"
+                "Tiempo Transcurrido: "+Ht+"horas"+Mt+"minutos"+St+"segundos"
 
                       });
 
