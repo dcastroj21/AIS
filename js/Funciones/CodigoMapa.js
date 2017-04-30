@@ -35,10 +35,7 @@ function ActualizarId_Barcos(){
 
     dateNow = new Date().getTime();
 
-    for (i in Tabla){
-
-    if (Entro) {Marker_Real[i].setMap(null);}
-    Entro=1;
+    // for (i in Tabla){    if (Entro) {Marker_Real[i].setMap(null);}    Entro=1;
 
     myLatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
 
