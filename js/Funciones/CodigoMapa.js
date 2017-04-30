@@ -5,7 +5,7 @@ var dateBefore;
 var SegundosDiferencia;
 var FechaDiferencia;
 var Marker_Real=[];
-var Tabla=[][];
+var Tabla;
 var map;
 var MarkerInterval;
 var Entro=0;
@@ -36,7 +36,8 @@ function ActualizarId_Barcos(){
     console.log(Tabla);
     dateNow = new Date().getTime();
 
-    // for (i in Tabla){    if (Entro) {Marker_Real[i].setMap(null);}    Entro=1;
+     for (i in Tabla){
+      // if (Entro) {Marker_Real[i].setMap(null);    Entro=1;
 
     myLatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
 
@@ -73,7 +74,7 @@ function ActualizarId_Barcos(){
 
     google.maps.event.addListener(Marker_Real[i], 'click', function() {this.infowindow.open(map, this)});
 
-
+}
 
 });
  }
