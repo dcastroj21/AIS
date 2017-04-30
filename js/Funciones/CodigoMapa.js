@@ -1,4 +1,5 @@
-var myLatLng;
+var LatLng=[];
+var LatLngAux=[];
 var infowindow=[];
 var dateNow;
 var dateBefore;
@@ -33,13 +34,13 @@ function ActualizarId_Barcos(){
   $.post("MySQL/mmsi.php").done(  function( data ) {
 
     Tabla = JSON.parse(data);
-    console.log(Tabla);
+
     dateNow = new Date().getTime();
 
      for (i in Tabla){
       // if (Entro) {Marker_Real[i].setMap(null);    Entro=1;
 
-    myLatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
+    LatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
 
     dateBefore=new Date(Tabla[i]['max(fecha)']).getTime();
 
@@ -70,9 +71,11 @@ function ActualizarId_Barcos(){
 
                       });
 
-    Marker_Real[i] = new google.maps.Marker({ position: myLatLng,   map: map , infowindow: infowindow[i]     });
+    Marker_Real[i] = new google.maps.Marker({ position: LatLng[i],   map: map , infowindow: infowindow[i]     });
 
     google.maps.event.addListener(Marker_Real[i], 'click', function() {this.infowindow.open(map, this)});
+
+    LatLngAux=LatLng;
 
 }
 
