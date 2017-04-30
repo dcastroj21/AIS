@@ -8,7 +8,7 @@
 
       <meta name="description" content="math.js | basic usage">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.5.3/math.min.js"></script>
-    <title>Ticoll</title>
+    <title>AIS project</title>
     <link rel="shortcut icon" href="images/taxi6.ico">
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">

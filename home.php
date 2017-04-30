@@ -12,7 +12,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
 
-    <title>Ticoll</title>
+    <title>AIS project</title>
     <link rel="shortcut icon" href="images/taxi6.ico">
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
@@ -196,64 +196,13 @@ th,td,tr{
 
 
 
-<div id="contenedor2" style="display:none">
 
-  <div id="flotante2"><h3>Ingrese su usuario y contraseña</h3>
-      <h5 style="margin-left:8.5%;margin-top:-2.5%;position:fixed;"><a onClick="flotante(2)">X</a></h5>
-     <form method="post" action="validar.php">
-        <h3 class="h1" style="color:white">Usuario</h3><input type="text" name="user" autocomplete="off" required><br>
-        <h3 class="h1" style="color:white">Contraseña</h3><input type="password" name="pw" autocomplete="off" required><br><br><br>
-        <input type="submit" class="btn btn-success" name="login" value="Ingresar">
-      </form>
-
-   </div>
-  <div id="fondo"></div>
-</div>
 
 
 
 
 
 </section>
-
-<section id="contact"> <!--#contact-->
-
-    <div class="container">
-
-    <div class="row">
-
-    <div class="section-title text-center wow fadeInDown">
-    <h2>Contáctanos</h2><BR>
-    <h4>Envia tu mensaje</h4>
-    </div>
-
-    <div class="col-md-8 col-sm-8 wow fadeInLeft">
-    <div class="contact-form clearfix">
-    <form action="index.html" method="post">
-    <div class="input-field">
-    <input type="text" class="form-control" name="name" placeholder="Your Name" required="">
-    </div>
-    <div class="input-field">
-    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-    </div>
-    <div class="input-field message">
-    <textarea name="message" id="mensaje" placeholder="Your Message" required=""></textarea>
-    </div>
-    <input type="submit" class="btn btn-blue pull-right" value="Enviar" id="msg-submit">
-    </form>
-    </div> <!-- end .contact-form -->
-    </div> <!-- .col-md-8 -->
-
-    <div class="contact-details">
-    <br><br><br><br><br><br><h4>Llámanos!</h4><br><br><br>
-    <p>+57 301-442-3053 <br> <br> +57 300-757-9899</p>
-    </div> <!-- end .contact-details -->
-
-
-    </div>
-    </div>
- </section>
-
 
 
 
