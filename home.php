@@ -152,7 +152,7 @@ th,td,tr{
 
    <div class="carousel-inner">
 
-        <div class="item active"  style="background-image: url('images/barco2.jpg')" >
+        <div class="item active"  style="background-image: url('images/barco1.jpg')" >
         <div class="carousel-caption">
         <div class="animated bounceInRight">
         <h2>Sistema de Identificación Automática (AIS) en un Celular</h2>
@@ -170,7 +170,7 @@ th,td,tr{
         </div>
         </div>
 
-        <div class="item" style="background-image: url('images/barco1.jpg')">
+        <div class="item" style="background-image: url('images/barco2.jpg')">
         <div class="carousel-caption">
         <div class="animated bounceInUp">
         <h2>Centraliza los datos en un entorno Web</h2>
