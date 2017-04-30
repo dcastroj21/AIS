@@ -38,10 +38,10 @@ function ActualizarId_Barcos(){
     dateNow = new Date().getTime();
 
      for (i in Tabla){
-      // if (Entro) {Marker_Real[i].setMap(null);    Entro=1;
+
 
     LatLng[i]=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
-
+    if (LatLng[i]!=LatLngAux[i] && Entro) {Marker_Real[i].setMap(null); }   
     dateBefore=new Date(Tabla[i]['max(fecha)']).getTime();
 
     SegundosDiferencia = (dateNow - dateBefore)/1000;
@@ -76,6 +76,7 @@ function ActualizarId_Barcos(){
     google.maps.event.addListener(Marker_Real[i], 'click', function() {this.infowindow.open(map, this)});
 
     LatLngAux=LatLng;
+    Entro=1;
 
 }
 
