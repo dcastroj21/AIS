@@ -118,7 +118,7 @@ th,td,tr{
                 <!-- logo -->
                 <h1 class="navbar-brand">
                     <a href="#body">
-                        <img src="images/icon.png" alt="Kasper Logo">
+                        <img src="images/logo.png" alt="Kasper Logo">
                     </a>
                 </h1>
                 <!-- /logo -->
@@ -155,7 +155,7 @@ th,td,tr{
         <div class="item active"  style="background-image: url('images/barco1.jpg')" >
         <div class="carousel-caption">
         <div class="animated bounceInRight">
-        <h2>Sistema de telemetría para el apoyo al despacho de mercancía</h2>
+        <h2>Sistema de Identificación Automática (AIS) en un Celular</h2>
 
         </div>
         </div>
@@ -164,7 +164,7 @@ th,td,tr{
         <div class="item" style="background-image: url('images/camiones1.jpg')">
         <div class="carousel-caption">
         <div class="animated bounceInDown">
-        <h2>Supervisar en tiempo real el peso de la mercancía transportada</h2>
+        <h2>Integra una solución que permita visualizar el sistema AIS en un celular y en un entorno Web</h2>
 
         </div>
         </div>
