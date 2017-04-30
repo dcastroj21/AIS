@@ -11,7 +11,10 @@ var map;
 var MarkerInterval;
 var Entro=0;
 var i;
-
+var Latitud=[];
+var Longitud=[];
+var LatitudAux=[];
+var LongitudAux=[];
 var apiKey = 'AIzaSyCF6NfbnvzeseQoQPP5Bh6iSHA3_fcHu1g';
 
 var myCenter=new google.maps.LatLng(parseFloat("11.232691"),parseFloat("-74.736413"));
@@ -25,7 +28,7 @@ var mapOptions ={
 map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 
 // $.post("MySQL/Promedio_Peso.php", {Cargo: 'admin', Usuario:'JamesLlerena', Vehiculo: 'EUQ426'  }).done(  function( data ) {console.log(JSON.parse(data));});
-MarkerInterval = setInterval(function(){ActualizarId_Barcos()},1000);
+MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
 
 function ActualizarId_Barcos(){
 
@@ -40,9 +43,12 @@ function ActualizarId_Barcos(){
      for (i in Tabla){
 
 
-    LatLng[i]=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
+    Latitud[i]=Tabla[i]['latitud'];
+    Longitud[i]=Tabla[i]['longitud'];
 
-    if (LatLng[i]!==LatLngAux[i] && Entro) {Marker_Real[i].setMap(null); console.log("entroo") }
+    LatLng[i]=new google.maps.LatLng(parseFloat(Latitud[i]),parseFloat(Longitud[i]));
+
+    if ( (Latitud[i]!=LatitudAux[i] ||Longitud[i]!=LongitudAux[i]) && Entro) {Marker_Real[i].setMap(null); console.log("entroo") }
 
     dateBefore=new Date(Tabla[i]['max(fecha)']).getTime();
 
@@ -77,10 +83,13 @@ function ActualizarId_Barcos(){
 
     google.maps.event.addListener(Marker_Real[i], 'click', function() {this.infowindow.open(map, this)});
 
-    LatLngAux=LatLng;
+    // LatLngAux=LatLng;
 
 
 }
+LatitudAux=Latitud;
+console.log(LatitudAux);
+LongitudAux=Longitud;
 Entro=1;
 });
  }
