@@ -8,6 +8,7 @@ var Marker_Real=[];
 var Tabla;
 var map;
 var MarkerInterval;
+var Entro=0;
 
 var apiKey = 'AIzaSyCF6NfbnvzeseQoQPP5Bh6iSHA3_fcHu1g';
 
@@ -36,7 +37,8 @@ function ActualizarId_Barcos(){
 
     for (i in Tabla){
 
-    Marker_Real[i].setMap(null);
+    if (Entro) {Marker_Real[i].setMap(null);}
+    Entro=1;
 
     myLatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
 
