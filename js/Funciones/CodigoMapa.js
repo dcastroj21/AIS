@@ -82,7 +82,7 @@ var apiKey = 'AIzaSyCF6NfbnvzeseQoQPP5Bh6iSHA3_fcHu1g';
 
 var Select = document.getElementById("seleccion");
 
-var myCenter=new google.maps.LatLng(parseFloat("10.95471"),parseFloat("-74.79636"));
+var myCenter=new google.maps.LatLng(parseFloat("11.232691"),parseFloat("-74.736413"));
 
 var mapOptions ={
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -98,7 +98,7 @@ MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
 function ActualizarId_Barcos(){
 
   $.post("MySQL/mmsi.php").done(  function( data ) {
-
+console.log(map.getZoom());
     Tabla = JSON.parse(data);
 
     console.log(Tabla);
@@ -112,7 +112,7 @@ function ActualizarId_Barcos(){
     dateBefore=new Date(Tabla[i]['max(fecha)']).getTime();
 
     SegundosDiferencia = (dateNow - dateBefore)/1000;
-    console.log("segundos diferencia:"+SegundosDiferencia);
+
     FechaDiferencia= new Date(0);
     FechaDiferencia.setSeconds(FechaDiferencia.getSeconds()+18000+SegundosDiferencia);
 
@@ -122,7 +122,7 @@ function ActualizarId_Barcos(){
     var Ht = FechaDiferencia.getHours();
     var Mt = FechaDiferencia.getMinutes();
     var St = FechaDiferencia.getSeconds();
-    console.log(Yt);
+
 
     infowindow[i] = new google.maps.InfoWindow({
 
