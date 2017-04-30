@@ -98,9 +98,14 @@ function ActualizarId_Barcos(){
 
     Tabla = JSON.parse(data);
 
-console.log(Tabla);
+    console.log(Tabla);
 
+    for (i in Tabla){
 
+    var myLatLng = {lat: Tabla[i]['latitud'], lng: Tabla[i]['longitud']};
+    var Marker_Real[i] = new google.maps.Marker({ position: myLatLng,   map: map     });
+    
+    }
 
 
 
