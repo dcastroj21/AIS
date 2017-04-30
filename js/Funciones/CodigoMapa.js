@@ -104,9 +104,11 @@ function ActualizarId_Barcos(){
 
     myLatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
 
-    // infowindow[i] = new google.maps.InfoWindow({          content: "NOMBRE: "+Tabla[i]['mmsi']        });
+    infowindow[i] = new google.maps.InfoWindow({          content: "NOMBRE: "+Tabla[i]['mmsi']        });
 
-    Marker_Real[i] = new google.maps.Marker({ position: myLatLng,   map: map , title:"NOMBRE: "+Tabla[i]['mmsi']     });
+    Marker_Real[i] = new google.maps.Marker({ position: myLatLng,   map: map , infowindow: infowindow[i]     });
+
+    google.maps.event.addListener(Marker_Real[i], 'click', function() {this.infowindow.open(map, this);
 
     // Marker_Real[i].addListener('click', function() {  infowindow[i].open(map,Marker_Real[i]);      });
 
@@ -114,10 +116,11 @@ function ActualizarId_Barcos(){
 
     var infowindow = new google.maps.InfoWindow();
 
-google.maps.AddListener(Marker_Real[i],'click', function(map,Marker_Real[i]){
-      infowindow.setContent(content)
-      infowindow.open(map,Marker_Real[i])
-    });
+    // google.maps.event.addListener(markers[key], 'click', function(innerKey) {
+    //      return function() {
+    //          infowindows[innerKey].open(map, markers[innerKey]);
+    //      }
+    //    }(key));
 
 
     }
