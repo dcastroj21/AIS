@@ -13,7 +13,7 @@ session_start();
     <meta charset="utf-8">
 
     <title>AIS project</title>
-    <link rel="shortcut icon" href="images/logo2.ico">
+    <link rel="shortcut icon" href="images/logo.ico">
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
 
@@ -152,7 +152,7 @@ th,td,tr{
 
    <div class="carousel-inner">
 
-        <div class="item active"  style="background-image: url('images/barco1.jpg')" >
+        <div class="item active"  style="background-image: url('images/barco2.jpg')" >
         <div class="carousel-caption">
         <div class="animated bounceInRight">
         <h2>Sistema de Identificación Automática (AIS) en un Celular</h2>
@@ -161,7 +161,7 @@ th,td,tr{
         </div>
         </div>
 
-        <div class="item" style="background-image: url('images/barco2.jpg')">
+        <div class="item" style="background-image: url('images/barco3.jpg')">
         <div class="carousel-caption">
         <div class="animated bounceInDown">
         <h2>Integra una solución que permita visualizar el sistema AIS en un celular y en un entorno Web</h2>
@@ -170,7 +170,7 @@ th,td,tr{
         </div>
         </div>
 
-        <div class="item" style="background-image: url('images/barco3.jpg')">
+        <div class="item" style="background-image: url('images/barco1.jpg')">
         <div class="carousel-caption">
         <div class="animated bounceInUp">
         <h2>Centralizar los datos en un entorno Web</h2>
