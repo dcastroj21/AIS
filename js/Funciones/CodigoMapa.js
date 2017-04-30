@@ -113,7 +113,7 @@ function ActualizarId_Barcos(){
                 "Longitud: "+Tabla[i]['longitud']+"\n"+
                 "Velocidad: "+Tabla[i]['velocidad']+"\n"+
                 "Curso: "+Tabla[i]['curso']+"\n"+
-                "Fecha: "+Tabla[i]['fecha']+"\n";
+                "Fecha: "+Tabla[i]['fecha']+"\n"
 
                       });
 
