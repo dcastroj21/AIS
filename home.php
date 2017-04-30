@@ -152,7 +152,7 @@ th,td,tr{
 
    <div class="carousel-inner">
 
-        <div class="item active"  style="background-image: url('images/barco1.jpg')" >
+        <div class="item active"  style="background-image: url('images/barco2.jpg')" >
         <div class="carousel-caption">
         <div class="animated bounceInRight">
         <h2>Sistema de Identificación Automática (AIS) en un Celular</h2>
@@ -161,7 +161,7 @@ th,td,tr{
         </div>
         </div>
 
-        <div class="item" style="background-image: url('images/barco1.jpg')">
+        <div class="item" style="background-image: url('images/barco3.jpg')">
         <div class="carousel-caption">
         <div class="animated bounceInDown">
         <h2>Integra una solución que permita visualizar el sistema AIS en un celular</h2>
