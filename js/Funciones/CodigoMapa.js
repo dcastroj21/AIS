@@ -111,7 +111,8 @@ function ActualizarId_Barcos(){
 
     dateBefore=new Date(Tabla[i]['fecha']).getTime();
 
-    SegundosDiferencia = (dateNow - dateBefore)/1000
+    SegundosDiferencia = (dateNow - dateBefore)/1000;
+    console.log("srgundos diferencia:"+SegundosDiferencia);
     FechaDiferencia= new Date(0);
     FechaDiferencia.setSeconds(FechaDiferencia.getSeconds()+18000+SegundosDiferencia);
 
@@ -121,6 +122,7 @@ function ActualizarId_Barcos(){
     var Ht = FechaDiferencia.getHours();
     var Mt = FechaDiferencia.getMinutes();
     var St = FechaDiferencia.getSeconds();
+    Console.log(Yt);
 
     infowindow[i] = new google.maps.InfoWindow({
 
