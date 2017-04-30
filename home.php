@@ -30,9 +30,9 @@ session_start();
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="styleSheet" href="css/encabezado.css">
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDULHVVSQ-vjy1ScgiJU0hPuKb-IRt6bmw&libraries=geometry,drawing,places"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDULHVVSQ-vjy1ScgiJU0hPuKb-IRt6bmw&libraries=geometry,drawing,places"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script> -->
 
     <script src="js/graphs.js"></script>
     <script src="js/bootstrap.min.js"></script>
