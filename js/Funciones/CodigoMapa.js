@@ -5,7 +5,7 @@ var dateBefore;
 var SegundosDiferencia;
 var FechaDiferencia;
 var Marker_Real=[];
-var Tabla;
+var Tabla=[][];
 var map;
 var MarkerInterval;
 var Entro=0;
