@@ -164,7 +164,7 @@ th,td,tr{
         <div class="item" style="background-image: url('images/barco3.jpg')">
         <div class="carousel-caption">
         <div class="animated bounceInDown">
-        <h2>Integra una solución que permita visualizar el sistema AIS en un celular y en un entorno Web</h2>
+        <h2>Integra una solución que permita visualizar el sistema AIS en un celular</h2>
 
         </div>
         </div>
