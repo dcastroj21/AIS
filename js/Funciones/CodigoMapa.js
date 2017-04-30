@@ -89,90 +89,15 @@ var mapOptions ={
 
 map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 
-map.controls[google.maps.ControlPosition.RIGHT_TOP].push(  document.getElementById('autoc'));
-
-
-map.controls[google.maps.ControlPosition.LEFT_TOP].push(  document.getElementById('Marcar_Recorrido'));
-
-map.controls[google.maps.ControlPosition.LEFT_TOP].push(  document.getElementById('Reporte_Recorrido'));
-
-map.controls[google.maps.ControlPosition.LEFT_TOP].push(  document.getElementById('Boton_Rutas'));
-
-map.controls[google.maps.ControlPosition.LEFT_TOP].push( document.getElementById('Boton_Real24'));
-
-map.controls[google.maps.ControlPosition.LEFT_TOP].push( document.getElementById('Boton_grafica'));
-
-map.controls[google.maps.ControlPosition.LEFT_TOP].push(  document.getElementById('btHist'));
-
-map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(  document.getElementById('Cerrar_Sesion'));
-
-map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(  document.getElementById('Boton_Zero'));
-
-
-map.controls[google.maps.ControlPosition.LEFT_CENTER].push(  document.getElementById('ListaCheckBoxes'));
-
-map.controls[google.maps.ControlPosition.TOP_CENTER].push(  document.getElementById('ListaPesos'));
-
-map.controls[google.maps.ControlPosition.RIGHT_TOP].push(  document.getElementById('ListaPesos3'));
-
-map.controls[google.maps.ControlPosition.TOP_CENTER].push(  document.getElementById('Imagen'));
-
-
-var autocomplete = new google.maps.places.Autocomplete(    document.getElementById('autoc'));
-
-autocomplete.bindTo('bounds', map);
-autocomplete.addListener('place_changed', function() {
- var place = autocomplete.getPlace();
- if (place.geometry.viewport) {
-       map.fitBounds(place.geometry.viewport);
-       vie=place.geometry.viewport;
-       var merk =new google.maps.Marker({
-       position:new google.maps.LatLng(parseFloat(vie['f']['f']),parseFloat(vie['b']['b'])),
-       map: map
-       });
-
-       var merk2 =new google.maps.Marker({
-       position:new google.maps.LatLng(parseFloat(vie['f']['b']),parseFloat(vie['b']['f'])),
-       map: map
-       });
-
-
-       console.log(place.geometry.viewport);    }
- else {       map.setCenter(place.geometry.location); console.log(place.geometry.location);       map.setZoom(16);    }
- });
-google.maps.LatLng.prototype.kmTo = function(a){
-    var e = Math, ra = e.PI/180;
-    var b = this.lat() * ra, c = a.lat() * ra, d = b - c;
-    var g = this.lng() * ra - a.lng() * ra;
-    var f = 2 * e.asin(e.sqrt(e.pow(e.sin(d/2), 2) + e.cos(b) * e.cos
-    (c) * e.pow(e.sin(g/2), 2)));
-    return f * 6378.137;
-    }
-google.maps.Polyline.prototype.inKm = function(n){
-    var a = this.getPath(n), len = a.getLength(), dist = 0;
-    for (var i=0; i < len-1; i++) {
-       dist += a.getAt(i).kmTo(a.getAt(i+1));
-    }
-    return dist;
-    }
-
-$('#Tiempo_Hora1').timepicker  ({   showMinutes: false,    showPeriod: true,            rows: 4    	});
-$('#Tiempo_Minuto1').timepicker({   showHours: false,      minutes: { interval: 1 },    rows: 6    	});
-$('#Tiempo_Hora2').timepicker  ({   showMinutes: false,    showPeriod: true,            rows: 4    	});
-$('#Tiempo_Minuto2').timepicker({   showHours: false,      minutes: { interval: 1 },    rows: 6    	});
-
-if(Cargo=="vehiculo"){
- document.getElementById('Marcar_Recorrido').style.display='none';
- document.getElementById('Reporte_Recorrido').style.display='none';
- document.getElementById('btHist').style.display='none';
- document.getElementById('Boton_Real24').style.display='none';
- document.getElementById('Boton_grafica').style.display='none';
- document.getElementById('Boton_Zero').style.display='none';
- }else{
-  document.getElementById('Reporte_Recorrido').style.display='inline-block';
- }
-
 // $.post("MySQL/Promedio_Peso.php", {Cargo: 'admin', Usuario:'JamesLlerena', Vehiculo: 'EUQ426'  }).done(  function( data ) {console.log(JSON.parse(data));});
+MarkerInterval = setInterval(function(){ActualizarId_Barcos()},2000);
+
+function ActualizarId_Barcos(){
+
+  $.post("MySQL/mmsi.php").done(  function( data ) {
+
+    console.log(JSON.parse(data));});
+}
 
 function Marcar_Recorrido(){
 
