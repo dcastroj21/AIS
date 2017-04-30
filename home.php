@@ -13,7 +13,7 @@ session_start();
     <meta charset="utf-8">
 
     <title>AIS project</title>
-    <link rel="shortcut icon" href="images/taxi6.ico">
+    <link rel="shortcut icon" href="images/logo2.ico">
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
 
