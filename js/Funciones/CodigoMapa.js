@@ -71,7 +71,7 @@ var Marker_Recorrido_Marcado=[];
 var Circulo_Interior_Recorrido=[];
 var Circulo_Exterior_Recorrido=[];
 var Cont_Circulos=0;
-
+var myLatLng
 
 
 
@@ -102,18 +102,10 @@ function ActualizarId_Barcos(){
 
     for (i in Tabla){
 
-    var myLatLng = {lat: Tabla[i]['latitud'], lng: Tabla[i]['longitud']};
-    var Marker_Real[i] = new google.maps.Marker({ position: myLatLng,   map: map     });
+    myLatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
+    Marker_Real[i] = new google.maps.Marker({ position: myLatLng,   map: map     });
     
     }
-
-
-
-
-
-
-
-
 
   });
 }
