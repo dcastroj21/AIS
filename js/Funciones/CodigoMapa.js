@@ -41,7 +41,7 @@ function ActualizarId_Barcos(){
 
 
     LatLng[i]=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
-    if (LatLng[i]!=LatLngAux[i] && Entro) {Marker_Real[i].setMap(null); }   
+    if (LatLng[i]!=LatLngAux[i] && Entro) {Marker_Real[i].setMap(null); console.log("entroo") }
     dateBefore=new Date(Tabla[i]['max(fecha)']).getTime();
 
     SegundosDiferencia = (dateNow - dateBefore)/1000;
@@ -76,9 +76,9 @@ function ActualizarId_Barcos(){
     google.maps.event.addListener(Marker_Real[i], 'click', function() {this.infowindow.open(map, this)});
 
     LatLngAux=LatLng;
-    Entro=1;
+
 
 }
-
+Entro=1;
 });
  }
