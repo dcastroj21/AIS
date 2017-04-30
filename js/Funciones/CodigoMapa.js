@@ -9,6 +9,7 @@ var Tabla;
 var map;
 var MarkerInterval;
 var Entro=0;
+var i;
 
 var apiKey = 'AIzaSyCF6NfbnvzeseQoQPP5Bh6iSHA3_fcHu1g';
 
