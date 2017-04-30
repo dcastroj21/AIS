@@ -13,7 +13,7 @@ session_start();
     <meta charset="utf-8">
 
     <title>AIS project</title>
-    <link rel="shortcut icon" href="images/taxi6.ico">
+    <link rel="shortcut icon" href="images/logo.ico">
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
 
@@ -118,7 +118,7 @@ th,td,tr{
                 <!-- logo -->
                 <h1 class="navbar-brand">
                     <a href="#body">
-                        <img src="images/logo.png" alt="Kasper Logo">
+                        <img src="images/1.png" alt="Kasper Logo">
                     </a>
                 </h1>
                 <!-- /logo -->
@@ -173,7 +173,7 @@ th,td,tr{
         <div class="item" style="background-image: url('images/camiones2.jpg')">
         <div class="carousel-caption">
         <div class="animated bounceInUp">
-        <h2>MARCACIÓN DE RUTAS DE DESPACHO SOBRE EL MAPA</h2>
+        <h2>Centralizar los datos en un entorno Web</h2>
         </div>
         </div>
         </div>
