@@ -73,7 +73,10 @@ var Circulo_Exterior_Recorrido=[];
 var Cont_Circulos=0;
 var myLatLng;
 var infowindow=[];
-
+var dateNow;
+var dateBefore;
+var SegundosDiferencia;
+var FechaDiferencia;
 
 var apiKey = 'AIzaSyCF6NfbnvzeseQoQPP5Bh6iSHA3_fcHu1g';
 
@@ -100,9 +103,24 @@ function ActualizarId_Barcos(){
 
     console.log(Tabla);
 
+    dateNow = new Date().getTime();
+
     for (i in Tabla){
 
     myLatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
+
+    dateBefore=new Date(Tabla[i]['fecha']).getTime();
+
+    SegundosDiferencia = (dateNow - dateBefore)/1000
+    FechaDiferencia= new Date(0);
+    FechaDiferencia.setSeconds(FechaDiferencia.getSeconds()+18000+SegundosDiferencia);
+
+    var Yt = FechaDiferencia.getFullYear()-1970;
+    var Mt = FechaDiferencia.getMonth();
+    var Dt = FechaDiferencia.getDate()-1;
+    var Ht = FechaDiferencia.getHours();
+    var Mt = FechaDiferencia.getMinutes();
+    var St = FechaDiferencia.getSeconds();
 
     infowindow[i] = new google.maps.InfoWindow({
 
@@ -113,7 +131,8 @@ function ActualizarId_Barcos(){
                 "Longitud: "+Tabla[i]['longitud']+"<br>"+
                 "Velocidad: "+Tabla[i]['velocidad']+"<br>"+
                 "Curso: "+Tabla[i]['curso']+"<br>"+
-                "Fecha: "+Tabla[i]['fecha']+"<br>"
+                "Fecha: "+Tabla[i]['max(fecha)']+"<br>"+
+                "Tiempo Transcurrido: "+Yt+"años"+Mt+"meses"+Dt+"dias"+Ht+"horas"+Mt+"minutos"+St+"segundos"
 
                       });
 
