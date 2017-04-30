@@ -108,8 +108,13 @@ function ActualizarId_Barcos(){
 
     Marker_Real[i] = new google.maps.Marker({ position: myLatLng,   map: map     });
 
-    Marker_Real[i].addListener('click', function() {  infowindow[i].open(map,Marker_Real[i]);      });
+    // Marker_Real[i].addListener('click', function() {  infowindow[i].open(map,Marker_Real[i]);      });
 
+    }
+
+    for (k in Tabla){
+
+      Marker_Real[k].addListener('click', function() {  infowindow[k].open(map,Marker_Real[k]);      });
     }
 
   });
