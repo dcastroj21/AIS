@@ -73,6 +73,6 @@ function ActualizarId_Barcos(){
     google.maps.event.addListener(Marker_Real[i], 'click', function() {this.infowindow.open(map, this)});
 
 
-  }
+
 });
  }

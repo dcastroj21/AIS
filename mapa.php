@@ -34,7 +34,7 @@
 -->
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="js/graphs.js"></script>
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nav.js"></script>
     <script src="js/jquery.mixitup.min.js"></script>
@@ -45,15 +45,13 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/datepicker.js"></script>
     <script src="js/eye.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/layout.js?ver=1.0.2"></script>
     <script src="js/jquery.ui.core.min.js"></script>
     <script src="js/jquery.ui.timepicker.js?v=0.3.3"></script>
     <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="js/markerwithlabel.js"></script>
-    <!--<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>-->
+
 
 </head>
 
