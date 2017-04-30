@@ -152,7 +152,7 @@ th,td,tr{
 
    <div class="carousel-inner">
 
-        <div class="item active"  style="background-image: url('images/transporte-trofeos.jpg')" >
+        <div class="item active"  style="background-image: url('images/barco1.jpg')" >
         <div class="carousel-caption">
         <div class="animated bounceInRight">
         <h2>Sistema de telemetría para el apoyo al despacho de mercancía</h2>
@@ -192,15 +192,6 @@ th,td,tr{
         </nav>
 
     </div>
-
-
-
-
-
-
-
-
-
 
 </section>
 
