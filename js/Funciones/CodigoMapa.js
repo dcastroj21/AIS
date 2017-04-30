@@ -104,23 +104,23 @@ function ActualizarId_Barcos(){
 
     myLatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
 
-    infowindow[i] = new google.maps.InfoWindow({          content: "NOMBRE: "+Tabla[i]['mmsi']        });
+    infowindow[i] = new google.maps.InfoWindow({
+
+      content:  "Nombre: "+Tabla[i]['nombre']+"\n"+
+                "mmsi: "+Tabla[i]['mmsi']+"\r"+
+                "Status: "+Tabla[i]['status']+"\t"+
+                "Latitud: "+Tabla[i]['latitud']+"\n"+
+                "Longitud: "+Tabla[i]['longitud']+"\n"+
+                "Velocidad: "+Tabla[i]['velocidad']+"\n"+
+                "Curso: "+Tabla[i]['curso']+"\n"+
+                "Fecha: "+Tabla[i]['fecha']+"\n";
+
+                      });
 
     Marker_Real[i] = new google.maps.Marker({ position: myLatLng,   map: map , infowindow: infowindow[i]     });
 
     google.maps.event.addListener(Marker_Real[i], 'click', function() {this.infowindow.open(map, this)});
 
-    // Marker_Real[i].addListener('click', function() {  infowindow[i].open(map,Marker_Real[i]);      });
-
-    // var  content= "NOMBRE: "+Tabla[i]['mmsi'];
-
-    // var infowindow = new google.maps.InfoWindow();
-
-    // google.maps.event.addListener(markers[key], 'click', function(innerKey) {
-    //      return function() {
-    //          infowindows[innerKey].open(map, markers[innerKey]);
-    //      }
-    //    }(key));
 
   }
 });
