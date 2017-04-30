@@ -104,7 +104,7 @@ function ActualizarId_Barcos(){
 
     myLatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
 
-    infowindow[i] = new google.maps.InfoWindow({          content: "NOMBRE: "+Tabla[i]['mmsi'];        });
+    infowindow[i] = new google.maps.InfoWindow({          content: "NOMBRE: "+Tabla[i]['mmsi']        });
 
     Marker_Real[i] = new google.maps.Marker({ position: myLatLng,   map: map     });
 
