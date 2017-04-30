@@ -40,7 +40,7 @@ function ActualizarId_Barcos(){
      for (i in Tabla){
       // if (Entro) {Marker_Real[i].setMap(null);    Entro=1;
 
-    LatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
+    LatLng[i]=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
 
     dateBefore=new Date(Tabla[i]['max(fecha)']).getTime();
 
