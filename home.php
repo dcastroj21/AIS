@@ -161,7 +161,7 @@ th,td,tr{
         </div>
         </div>
 
-        <div class="item" style="background-image: url('images/camiones1.jpg')">
+        <div class="item" style="background-image: url('images/barco2.jpg')">
         <div class="carousel-caption">
         <div class="animated bounceInDown">
         <h2>Integra una solución que permita visualizar el sistema AIS en un celular y en un entorno Web</h2>
@@ -170,7 +170,7 @@ th,td,tr{
         </div>
         </div>
 
-        <div class="item" style="background-image: url('images/camiones2.jpg')">
+        <div class="item" style="background-image: url('images/barco3.jpg')">
         <div class="carousel-caption">
         <div class="animated bounceInUp">
         <h2>Centralizar los datos en un entorno Web</h2>
