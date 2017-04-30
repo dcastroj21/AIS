@@ -112,7 +112,7 @@ function ActualizarId_Barcos(){
 
     var  content= "NOMBRE: "+Tabla[i]['mmsi'];
 
-    var infowindow = new google.maps.InfoWindow()
+    var infowindow = new google.maps.InfoWindow();
 
 google.maps.AddListener(Marker_Real[i],'click', function(map,Marker_Real[i]){
       infowindow.setContent(content)
