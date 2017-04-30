@@ -109,9 +109,9 @@ function ActualizarId_Barcos(){
       content:  "Nombre: "+Tabla[i]['nombre']+"\n"+
                 "mmsi: "+Tabla[i]['mmsi']+"\r"+
                 "Status: "+Tabla[i]['status']+"\t"+
-                "Latitud: "+Tabla[i]['latitud']+"\n"+
-                "Longitud: "+Tabla[i]['longitud']+"\n"+
-                "Velocidad: "+Tabla[i]['velocidad']+"\n"+
+                "Latitud: "+Tabla[i]['latitud']+"\r\t"+
+                "Longitud: "+Tabla[i]['longitud']+"/n"+
+                "Velocidad: "+Tabla[i]['velocidad']+"\t\r"+
                 "Curso: "+Tabla[i]['curso']+"\n"+
                 "Fecha: "+Tabla[i]['fecha']+"\n"
 
