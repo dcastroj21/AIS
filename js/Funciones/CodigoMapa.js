@@ -87,7 +87,7 @@ var myCenter=new google.maps.LatLng(parseFloat("11.232691"),parseFloat("-74.7364
 var mapOptions ={
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 center : myCenter,
-                zoom : 16,
+                zoom : 10,
                 disableDefaultUI: false    };
 
 map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
@@ -134,7 +134,7 @@ console.log(map.getZoom());
                 "Velocidad: "+Tabla[i]['velocidad']+"<br>"+
                 "Curso: "+Tabla[i]['curso']+"<br>"+
                 "Fecha: "+Tabla[i]['max(fecha)']+"<br>"+
-                "Tiempo Transcurrido: "+Yt+"años"+Mt+"meses"+Dt+"dias"+Ht+"horas"+Mt+"minutos"+St+"segundos"
+                "Tiempo Transcurrido: "Ht+"horas"+Mt+"minutos"+St+"segundos"
 
                       });
 
