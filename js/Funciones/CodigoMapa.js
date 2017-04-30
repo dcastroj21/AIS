@@ -106,14 +106,14 @@ function ActualizarId_Barcos(){
 
     infowindow[i] = new google.maps.InfoWindow({
 
-      content:  "Nombre: "+Tabla[i]['nombre']+"\n"+
-                "mmsi: "+Tabla[i]['mmsi']+"\r"+
-                "Status: "+Tabla[i]['status']+"\t"+
-                "Latitud: "+Tabla[i]['latitud']+"\r\t"+
-                "Longitud: "+Tabla[i]['longitud']+"/n"+
-                "Velocidad: "+Tabla[i]['velocidad']+"\t\r"+
-                "Curso: "+Tabla[i]['curso']+"\n"+
-                "Fecha: "+Tabla[i]['fecha']+"\n"
+      content:  "Nombre: "+Tabla[i]['nombre']+"<br>"+
+                "mmsi: "+Tabla[i]['mmsi']+"<br>"+
+                "Status: "+Tabla[i]['status']+"<br>"+
+                "Latitud: "+Tabla[i]['latitud']+"<br>"+
+                "Longitud: "+Tabla[i]['longitud']+"<br>"+
+                "Velocidad: "+Tabla[i]['velocidad']+"<br>"+
+                "Curso: "+Tabla[i]['curso']+"<br>"+
+                "Fecha: "+Tabla[i]['fecha']+"<br>"
 
                       });
 
