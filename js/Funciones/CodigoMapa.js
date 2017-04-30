@@ -112,9 +112,9 @@ function ActualizarId_Barcos(){
 
     // Marker_Real[i].addListener('click', function() {  infowindow[i].open(map,Marker_Real[i]);      });
 
-    var  content= "NOMBRE: "+Tabla[i]['mmsi'];
+    // var  content= "NOMBRE: "+Tabla[i]['mmsi'];
 
-    var infowindow = new google.maps.InfoWindow();
+    // var infowindow = new google.maps.InfoWindow();
 
     // google.maps.event.addListener(markers[key], 'click', function(innerKey) {
     //      return function() {
@@ -123,7 +123,7 @@ function ActualizarId_Barcos(){
     //    }(key));
 
 
-    }
+  });
 
 
 
