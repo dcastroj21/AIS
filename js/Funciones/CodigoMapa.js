@@ -108,7 +108,7 @@ function ActualizarId_Barcos(){
 
     Marker_Real[i] = new google.maps.Marker({ position: myLatLng,   map: map , infowindow: infowindow[i]     });
 
-    google.maps.event.addListener(Marker_Real[i], 'click', function() {this.infowindow.open(map, this);
+    google.maps.event.addListener(Marker_Real[i], 'click', function() {this.infowindow.open(map, this)});
 
     // Marker_Real[i].addListener('click', function() {  infowindow[i].open(map,Marker_Real[i]);      });
 
@@ -122,12 +122,8 @@ function ActualizarId_Barcos(){
     //      }
     //    }(key));
 
-
-  });
-
-
-
-  });
+  }
+});
 }
 
 function Marcar_Recorrido(){
