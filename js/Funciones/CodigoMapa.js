@@ -71,8 +71,8 @@ var Marker_Recorrido_Marcado=[];
 var Circulo_Interior_Recorrido=[];
 var Circulo_Exterior_Recorrido=[];
 var Cont_Circulos=0;
-var myLatLng
-
+var myLatLng;
+var infowindow=[];
 
 
 var apiKey = 'AIzaSyCF6NfbnvzeseQoQPP5Bh6iSHA3_fcHu1g';
@@ -90,7 +90,7 @@ var mapOptions ={
 map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 
 // $.post("MySQL/Promedio_Peso.php", {Cargo: 'admin', Usuario:'JamesLlerena', Vehiculo: 'EUQ426'  }).done(  function( data ) {console.log(JSON.parse(data));});
-MarkerInterval = setInterval(function(){ActualizarId_Barcos()},20000);
+MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
 
 function ActualizarId_Barcos(){
 
@@ -103,8 +103,13 @@ function ActualizarId_Barcos(){
     for (i in Tabla){
 
     myLatLng=new google.maps.LatLng(parseFloat(Tabla[i]['latitud']),parseFloat(Tabla[i]['longitud']));
+
+    infowindow[i] = new google.maps.InfoWindow({          content: "NOMBRE: "+Tabla[i]['mmsi'];        });
+
     Marker_Real[i] = new google.maps.Marker({ position: myLatLng,   map: map     });
-    
+
+    Marker_Real[i].addListener('click', function() {  infowindow[i].open(map,Marker_Real[i]);      });
+
     }
 
   });
