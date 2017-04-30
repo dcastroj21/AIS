@@ -110,12 +110,19 @@ function ActualizarId_Barcos(){
 
     // Marker_Real[i].addListener('click', function() {  infowindow[i].open(map,Marker_Real[i]);      });
 
+    var  content: "NOMBRE: "+Tabla[i]['mmsi']
+
+    var infowindow = new google.maps.InfoWindow()
+
+google.maps.AddListener(Marker_Real[i],'click', function(map,Marker_Real[i]){
+      infowindow.setContent(content)
+      infowindow.open(map,Marker_Real[i])
+    });
+
+
     }
 
-    // for (k in Tabla){
-//
-      // Marker_Real[k].addListener('click', function() {  infowindow[k].open(map,Marker_Real[k]);      });
-    // }
+
 
   });
 }
