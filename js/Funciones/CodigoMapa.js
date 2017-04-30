@@ -90,13 +90,27 @@ var mapOptions ={
 map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 
 // $.post("MySQL/Promedio_Peso.php", {Cargo: 'admin', Usuario:'JamesLlerena', Vehiculo: 'EUQ426'  }).done(  function( data ) {console.log(JSON.parse(data));});
-MarkerInterval = setInterval(function(){ActualizarId_Barcos()},2000);
+MarkerInterval = setInterval(function(){ActualizarId_Barcos()},20000);
 
 function ActualizarId_Barcos(){
 
   $.post("MySQL/mmsi.php").done(  function( data ) {
 
-    console.log(JSON.parse(data));});
+    Tabla = JSON.parse(data);
+
+console.log(Tabla);
+
+
+
+
+
+
+
+
+
+
+
+  });
 }
 
 function Marcar_Recorrido(){
