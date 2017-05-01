@@ -78,7 +78,7 @@ function ActualizarId_Barcos(){
 
                       });
 
-                      if (Marker_Real[i]){console.log("definido");if (Entro){ Marker_Real[i].setMap(null) }}else{console.log("indefinido")}
+                      if (Marker_Real[i]){if (Entro){ Marker_Real[i].setMap(null) }}
 
     Marker_Real[i] = new google.maps.Marker({ position: LatLng[i],   map: map , infowindow: infowindow[i]     });
 
