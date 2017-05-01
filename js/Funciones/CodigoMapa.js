@@ -27,9 +27,9 @@ var mapOptions ={
 
 map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 
-// $.post("MySQL/Promedio_Peso.php", {Cargo: 'admin', Usuario:'JamesLlerena', Vehiculo: 'EUQ426'  }).done(  function( data ) {console.log(JSON.parse(data));});
-MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
 ActualizarId_Barcos();
+MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
+
 function ActualizarId_Barcos(){
 
 
@@ -37,7 +37,7 @@ function ActualizarId_Barcos(){
   $.post("MySQL/mmsi.php").done(  function( data ) {
 
     Tabla = JSON.parse(data);
-console.log(Tabla);
+
     dateNow = new Date().getTime();
 
      for (i in Tabla){
