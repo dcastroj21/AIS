@@ -28,7 +28,7 @@ var mapOptions ={
 map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 
 // $.post("MySQL/Promedio_Peso.php", {Cargo: 'admin', Usuario:'JamesLlerena', Vehiculo: 'EUQ426'  }).done(  function( data ) {console.log(JSON.parse(data));});
-MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
+MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
 
 function ActualizarId_Barcos(){
 
@@ -47,8 +47,8 @@ function ActualizarId_Barcos(){
     Longitud[i]=Tabla[i]['longitud'];
 
     LatLng[i]=new google.maps.LatLng(parseFloat(Latitud[i]),parseFloat(Longitud[i]));
-
-    if ( (Latitud[i]!==LatitudAux[i] || Longitud[i]!==LongitudAux[i]) && Entro) {Marker_Real[i].setMap(null); console.log("entroo") }
+    if (Entro){ Marker_Real[i].setMap(null) }
+    //if ( (Latitud[i]!==LatitudAux[i] || Longitud[i]!==LongitudAux[i]) && Entro) {Marker_Real[i].setMap(null); console.log("entroo") }
 
     dateBefore=new Date(Tabla[i]['max(fecha)']).getTime();
 
