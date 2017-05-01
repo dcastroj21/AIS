@@ -48,7 +48,7 @@ if (Marker_Real[i]){console.log("definido");}else{console.log("indefinido")}
 
     LatLng[i]=new google.maps.LatLng(parseFloat(Latitud[i]),parseFloat(Longitud[i]));
 
-    
+
 
     dateBefore=new Date(Tabla[i]['max(fecha)']).getTime();
 
