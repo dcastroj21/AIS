@@ -50,7 +50,7 @@ if (Marker_Real[i]){console.log("definido");}else{console.log("indefinido")}
 
 
 
-    dateBefore=new Date(Tabla[i]['max(fecha)']).getTime();
+    dateBefore=new Date(Tabla[i]['fecha']).getTime();
 
     SegundosDiferencia = (dateNow - dateBefore)/1000;
 
@@ -73,7 +73,7 @@ if (Marker_Real[i]){console.log("definido");}else{console.log("indefinido")}
                 "Longitud: "+Tabla[i]['longitud']+"<br>"+
                 "Velocidad: "+Tabla[i]['velocidad']+"<br>"+
                 "Curso: "+Tabla[i]['curso']+"<br>"+
-                "Fecha: "+Tabla[i]['max(fecha)']+"<br>"+
+                "Fecha: "+Tabla[i]['fecha']+"<br>"+
                 "Tiempo Transcurrido: "+Ht+"horas"+Mt+"minutos"+St+"segundos"
 
                       });
