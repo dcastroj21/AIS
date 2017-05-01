@@ -42,7 +42,7 @@ console.log(Tabla);
 
      for (i in Tabla){
 
-if (Marker_Real[i]){console.log("definido");}else{console.log("indefinido")}
+
     Latitud[i]=Tabla[i]['latitud'];
     Longitud[i]=Tabla[i]['longitud'];
 
@@ -77,7 +77,9 @@ if (Marker_Real[i]){console.log("definido");}else{console.log("indefinido")}
                 "Tiempo Transcurrido: "+Ht+"horas"+Mt+"minutos"+St+"segundos"
 
                       });
-    if (Entro){ Marker_Real[i].setMap(null) }
+
+                      if (Marker_Real[i]){console.log("definido");if (Entro){ Marker_Real[i].setMap(null) }}else{console.log("indefinido")}
+
     Marker_Real[i] = new google.maps.Marker({ position: LatLng[i],   map: map , infowindow: infowindow[i]     });
 
     google.maps.event.addListener(Marker_Real[i], 'click', function() {this.infowindow.open(map, this)});
