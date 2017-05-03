@@ -20,8 +20,9 @@ var apiKey = 'AIzaSyCF6NfbnvzeseQoQPP5Bh6iSHA3_fcHu1g';
 var icono;
 var myCenter=new google.maps.LatLng(parseFloat("11.232691"),parseFloat("-74.736413"));
 var MarkersCirculos= [];
-var Colores={0:'red',2:'magenta',1:'black',3:'coral',4:'green',5:'cyan',6:'darkgoldenrod',7:'darkorange',8:'darkslateblue'};
+var Colores={0:'red',1:'blue',2:'magenta',3:'coral',4:'green',5:'cyan',6:'darkgoldenrod',7:'darkorange',8:'darkslateblue'};
 var circuloss=[];
+var NumCirculos=5;
 
 
 var mapOptions ={
@@ -34,16 +35,19 @@ map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 
 map.controls[google.maps.ControlPosition.RIGHT_TOP].push(  document.getElementById('coordenadas'));
 
-// google.maps.event.addListenerOnce(map, 'idle', function(){
-//     jQuery('.gm-style-iw').prev().remove();
-// });
+google.maps.event.addListenerOnce(map, 'idle', function(){
+    jQuery('.gm-style-iw').prev().remove();
+});
 
-
+map.addListener('click', function() { CerrarTodo(); });
 map.addListener('mousemove', function(e) {
+  // console.log("move");
   var lat = ""+e.latLng.lat(); lat = lat.substr(0,8);
   var lng = ""+e.latLng.lng(); lng = lng.substr(0,9);
   document.getElementById('coordenadas').innerHTML    =  "Latitud: "+lat+" - Longitud: "+lng;
 });
+
+
 ActualizarId_Barcos();
  MarkerInterval = setInterval(function(){ActualizarId_Barcos()},2000);
 
@@ -85,8 +89,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
   // '<div style="width:auto;height:auto" id="content">'+
   // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombre</h1></div>'+
   // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombreee</h1></div>'+
-  //
-  //                   '</div>';
+  // '</div>';
 
 
 
@@ -116,15 +119,23 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
 // if (k==1){infowindow[k].open(map,Marker_Real[k]);  }
 }
 
+function CerrarTodo(){
 
+  for (var o in Tabla){
+
+    if (infowindow[o]) {infowindow[o].close();}
+    if(MarkersCirculos[o]){for (var l=1;l<=NumCirculos;l++){MarkersCirculos[o][l-1].setMap(null);}MarkersCirculos[o]=undefined;}
+  }
+
+}
 function Circulos(j){
  for (var o in Tabla){
 
    if (o!=j && infowindow[o]) {infowindow[o].close();}
-   if(MarkersCirculos[o]){for (var l=1;l<6;l++){MarkersCirculos[o][l-1].setMap(null);}MarkersCirculos[o]=undefined;}
+   if(MarkersCirculos[o]){for (var l=1;l<=NumCirculos;l++){MarkersCirculos[o][l-1].setMap(null);}MarkersCirculos[o]=undefined;}
  }
 
-  for (var l=1;l<6;l++){
+  for (var l=1;l<=NumCirculos;l++){
     circuloss[l-1] = new google.maps.Circle({ center: LatLng[j], radius: l*1000,
                                               strokeColor: Colores[Tabla[j]['tipo']],  strokeWeight: 1,
                                               fillOpacity: 0, map: map       });
@@ -135,7 +146,6 @@ function Circulos(j){
 }
 
 function ActualizarId_Barcos(){
-
 
   $.post("MySQL/mmsi.php").done(  function( data ) {
 
