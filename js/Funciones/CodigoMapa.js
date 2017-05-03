@@ -34,9 +34,9 @@ map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 
 map.controls[google.maps.ControlPosition.RIGHT_TOP].push(  document.getElementById('coordenadas'));
 
-google.maps.event.addListenerOnce(map, 'idle', function(){
-    jQuery('.gm-style-iw').prev().remove();
-});
+// google.maps.event.addListenerOnce(map, 'idle', function(){
+//     jQuery('.gm-style-iw').prev().remove();
+// });
 
 
 map.addListener('mousemove', function(e) {
@@ -81,12 +81,12 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
               "Fecha: "+Tabla[k]['fecha']+"<br>"+
               "Tiempo Transcurrido: "+Ht+"horas"+Mt+"minutos"+St+"segundos";
 
-  MensajeInfo =
-  '<div style="width:auto;height:auto" id="content">'+
-  '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombre</h1></div>'+
-  '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombreee</h1></div>'+
-
-                    '</div>';
+  // MensajeInfo =
+  // '<div style="width:auto;height:auto" id="content">'+
+  // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombre</h1></div>'+
+  // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombreee</h1></div>'+
+  //
+  //                   '</div>';
 
 
 
@@ -109,7 +109,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
             Marker_Real[k] = new google.maps.Marker({ position: LatLng[k],   map: map, icon: icono });
 
             infowindow[k] = new google.maps.InfoWindow({   content:  MensajeInfo, strokeColor: 'red' });
-            Marker_Real[k].addListener('click', function() {Circulos(k);  infowindow[k].open(map,Marker_Real[k]);   jQuery('.gm-style-iw').prev('div').remove();      });
+            Marker_Real[k].addListener('click', function() {Circulos(k);  infowindow[k].open(map,Marker_Real[k]); /*  jQuery('.gm-style-iw').prev('div').remove(); */     });
         }
   }
 
