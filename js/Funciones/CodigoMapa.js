@@ -113,7 +113,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
         }
   }
 
-if (k==1){infowindow[k].open(map,Marker_Real[k]);  }
+// if (k==1){infowindow[k].open(map,Marker_Real[k]);  }
 }
 
 
