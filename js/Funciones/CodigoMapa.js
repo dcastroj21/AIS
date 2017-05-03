@@ -20,7 +20,7 @@ var apiKey = 'AIzaSyCF6NfbnvzeseQoQPP5Bh6iSHA3_fcHu1g';
 var icono;
 var myCenter=new google.maps.LatLng(parseFloat("11.232691"),parseFloat("-74.736413"));
 var MarkersCirculos= [];
-var Colores={0:'red',1:'blue',2:'magenta',3:'coral',4:'green',5:'cyan',6:'darkgoldenrod',7:'darkorange',8:'darkslateblue'};
+var Colores={0:'red',2:'blue',1:'magenta',3:'coral',4:'green',5:'cyan',6:'darkgoldenrod',7:'darkorange',8:'darkslateblue'};
 var circuloss=[];
 
 
