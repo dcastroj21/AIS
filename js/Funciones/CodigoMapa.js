@@ -121,10 +121,10 @@ function Circulos(j){
  for (var o in Tabla){
 
    if (o!=j && infowindow[o]) {infowindow[o].close();}
-   if(MarkersCirculos[o]){for (var l=1;l<11;l++){MarkersCirculos[o][l-1].setMap(null);}MarkersCirculos[o]=undefined;}
+   if(MarkersCirculos[o]){for (var l=1;l<6;l++){MarkersCirculos[o][l-1].setMap(null);}MarkersCirculos[o]=undefined;}
  }
 
-  for (var l=1;l<11;l++){
+  for (var l=1;l<6;l++){
     circuloss[l-1] = new google.maps.Circle({ center: LatLng[j], radius: l*1000,
                                               strokeColor: Colores[Tabla[j]['tipo']],  strokeWeight: 1,
                                               fillOpacity: 0, map: map       });
