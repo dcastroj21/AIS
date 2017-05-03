@@ -29,9 +29,9 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDULHVVSQ-vjy1ScgiJU0hPuKb-IRt6bmw&libraries=geometry,drawing,places"></script>
 
 
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
--->
+
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
@@ -56,6 +56,7 @@
 </head>
 
 <body>
+  <h3 style="font: bold 17px Arial, serif;color:black;background-color:transparent;width:350px;height:20px;" id="coordenadas"></h3>
 
 <style type="text/css">
 
