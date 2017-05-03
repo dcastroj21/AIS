@@ -45,7 +45,7 @@ map.addListener('mousemove', function(e) {
   document.getElementById('coordenadas').innerHTML    =  "Latitud: "+lat+" - Longitud: "+lng;
 });
 ActualizarId_Barcos();
- // MarkerInterval = setInterval(function(){ActualizarId_Barcos()},2000);
+ MarkerInterval = setInterval(function(){ActualizarId_Barcos()},2000);
 
 function Markers(k){
 
