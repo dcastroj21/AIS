@@ -137,16 +137,9 @@ function Markers(k){
   // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombreee</h1></div>'+
   // '</div>';
 
-console.log(Tabla[k]['tipo']);
- if (Tabla[k]['tipo']=='Estacion'){
+// console.log(Tabla[k]['tipo']);
 
-   icono = {
-             path: 'http://aisproject.ddns.net/images/estacionmarker.png',
-             
 
-           };
-         }
- else{
             icono = {
                         path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
                         fillColor: Colores[Tabla[k]['tipo']],
@@ -156,7 +149,7 @@ console.log(Tabla[k]['tipo']);
                         strokeWeight: 1,
                         rotation: Tabla[k]['curso']-360*-1
                       };
-                    }
+
 
   if (Marker_Real[k]){
     Marker_Real[k].setPosition(LatLng[k]);
@@ -165,8 +158,13 @@ console.log(Tabla[k]['tipo']);
   }else{
         if (Dt<1){
           // console.log("local5");
-            Marker_Real[k] = new google.maps.Marker({ position: LatLng[k], center: LatLng[k] ,   map: map, icon: icono });
 
+          if (Tabla[k]['tipo']=='Estacion'){
+
+            Marker_Real[k] = new google.maps.Marker({ position: LatLng[k],   map: map, icon: 'http://aisproject.ddns.net/images/estacionmarker.png' });
+          }else{
+            Marker_Real[k] = new google.maps.Marker({ position: LatLng[k],    map: map, icon: icono });
+}
             infowindow[k] = new google.maps.InfoWindow({   content:  MensajeInfo, strokeColor: 'red' });
             Marker_Real[k].addListener('click', function() {Circulos(k);  infowindow[k].open(map,Marker_Real[k]);    });
         }
