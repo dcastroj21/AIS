@@ -93,12 +93,16 @@ var orden=[];
      console.log(nmmsi);
      console.log("---");
      console.log(nmmsi.sort());
-     for (i in Tabla){
 
+     for (i in Tabla){
        for (k in Tabla){
          if (nmmsi[i]==Tabla[k]['mmsi']){orden[i]=k;}
        }
      }
+     for (i in Tabla){
+       Tabla2[i]=Tabla[orden[i]];
+     }
+     Tabla=Tabla2;
 
 
      for (i in Tabla){ MMSII(i);    Markers(i);    }
@@ -134,7 +138,7 @@ function Markers(k){
   var Mt = FechaDiferencia.getMinutes();
   var St = FechaDiferencia.getSeconds();
 
-// console.log(mmsi);
+console.log(mmsi);
 
 
 MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
