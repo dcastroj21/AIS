@@ -146,7 +146,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
 
   }else{
         if (Dt<1){
-          console.log("Entra a crear");
+          console.log("Entra a crear1");
           if(Colores[Tabla[k]['tipo']]==undefined)          {Tabla[k]['tipo']='unespecified';}
 
           var icono = {
