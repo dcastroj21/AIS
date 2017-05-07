@@ -79,7 +79,7 @@ map.addListener('mousemove', function(e) {
 
 
 ActualizarId_Barcos();
- // MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
+ MarkerInterval = setInterval(function(){ActualizarId_Barcos()},1000);
 
 function Markers(k){
 
@@ -142,7 +142,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
 
   }else{
         if (Dt<1){
-          console.log("local5");
+          // console.log("local5");
             Marker_Real[Tabla[k]['mmsi']] = new google.maps.Marker({ position: LatLng[Tabla[k]['mmsi']],  map: map, icon: icono });
 
             infowindow[Tabla[k]['mmsi']] = new google.maps.InfoWindow({   content:  MensajeInfo, strokeColor: 'red' });
