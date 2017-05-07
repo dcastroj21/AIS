@@ -34,28 +34,26 @@ var Colores={ 'Cargo':'green',                            'Tanker':'red',
               'High speed craft - Hazardous category D':'yellow',     'Passenger - Hazardous category D':'darkblue',
               'High speed craft - RFU':'yellow',                      'Passenger - RFU':'darkblue',
 
-              'Pilot Vessel':'cyan',                'Sailing':'magenta',
-              'Search and Rescue vessel':'cyan',    'Pleasure Craft':'magenta',
-              'Tug':'cyan',
-              'Port Tender':'cyan',                 'Fishing':'NavajoWhite',
-              'Anti-pollution equipment':'cyan',
-              'Law Enforcement':'cyan',             'unespecified':'gray',
-              'Spare - Local Vessel':'cyan',
-              'Medical Transport':'cyan',
-              'Noncombatant ship according to RR Resolution':'cyan',
-              'Towing':'cyan',
-              'Towing: length exceeds 200m or breadth exceed':'cyan',
-              'Dredging or underwater ops':'cyan',
-              'Diving ops':'cyan',
-              'Military ops':'cyan',
-              'Reserved':'cyan',};
+              'Pilot Vessel':'yellow',                'Sailing':'darkblue',
+              'Search and Rescue vessel':'yellow',    'Pleasure Craft':'darkblue',
+              'Tug':'yellow',
+              'Port Tender':'yellow',                 'Fishing':'darkblue',
+              'Anti-pollution equipment':'yellow',
+              'Law Enforcement':'yellow',             'unespecified':'gray',
+              'Spare - Local Vessel':'yellow',
+              'Medical Transport':'yellow',
+              'Noncombatant ship according to RR Resolution':'yellow',
+              'Towing':'yellow',
+              'Towing: length exceeds 200m or breadth exceed':'yellow',
+              'Dredging or underwater ops':'yellow',
+              'Diving ops':'yellow',
+              'Military ops':'yellow',
+              'Reserved':'yellow',};
 
 
 var circuloss=[];
 var NumCirculos=5;
-var mmsi;
-var nmmsi=[];
-var Tabla2=[];
+
 
 var mapOptions ={
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -79,54 +77,17 @@ map.addListener('mousemove', function(e) {
   document.getElementById('coordenadas').innerHTML    =  "Latitud: "+lat+" - Longitud: "+lng;
 });
 
-console.log("4hppp");
-function Ordenar(){
 
-  for (i in Tabla){      nmmsi[i] = Tabla[i]['mmsi'];     }
-  console.log(nmmsi);
-  console.log("---");
-  console.log(nmmsi.sort());
-
-  for (i in Tabla){
-    for (k in Tabla){
-      if (nmmsi[i]==Tabla[k]['mmsi']){orden[i]=k;}
-    }
-  }
-  for (i in Tabla){
-    Tabla2[i]=Tabla[orden[i]];
-  }
-  Tabla=Tabla2;
-}
 ActualizarId_Barcos();
- MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
-var orden=[];
- function ActualizarId_Barcos(){
+ MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
 
-   $.post("MySQL/mmsi.php").done(  function( data ) {
-
-     Tabla = JSON.parse(data);
-console.log(Tabla);
-    //Ordenar();
-
-
-     for (i in Tabla){ MMSII(i);    Markers(i);    }
-     console.log("----------");
-
-     Entro=1;
- });
-
-  }
-function MMSII(p){
-
-  mmsi = Tabla[p]['mmsi'];
-}
 function Markers(k){
 
   dateNow = new Date().getTime();
-  // Latitud[k]=Tabla[k]['latitud'];
-  // Longitud[k]=Tabla[k]['longitud'];
+  Latitud[k]=Tabla[k]['latitud'];
+  Longitud[k]=Tabla[k]['longitud'];
 
-  LatLng[mmsi]=new google.maps.LatLng(parseFloat(Tabla[k]['latitud']),parseFloat(Tabla[k]['longitud']));
+  LatLng[k]=new google.maps.LatLng(parseFloat(Latitud[k]),parseFloat(Longitud[k]));
 
   dateBefore=new Date(Tabla[k]['fecha']).getTime();
 
@@ -141,12 +102,9 @@ function Markers(k){
   var Ht = FechaDiferencia.getHours();
   var Mt = FechaDiferencia.getMinutes();
   var St = FechaDiferencia.getSeconds();
-
-console.log(mmsi);
-
-
+console.log(Tabla[k]['mmsi']);
 MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
-              "mmsi: "+mmsi+"<br>"+
+              "mmsi: "+Tabla[k]['mmsi']+"<br>"+
               "Tipo: "+Tabla[k]['tipo']+"<br>"+
               "Calado: "+Tabla[k]['calado']+"<br>"+
               "Status: "+Tabla[k]['status']+"<br>"+
@@ -157,7 +115,8 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
               "Fecha: "+Tabla[k]['fecha']+"<br>"+
               "Tiempo Transcurrido: "+Ht+"horas"+Mt+"minutos"+St+"segundos";
 
-
+              if(Colores[Tabla[k]['tipo']]==undefined)
+              {Tabla[k]['tipo']='unespecified';}
 
   // MensajeInfo =
   // '<div style="width:auto;height:auto" id="content">'+
@@ -165,31 +124,29 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
   // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombreee</h1></div>'+
   // '</div>';
 
-  if (Marker_Real[mmsi]){
-    Marker_Real[mmsi].setPosition(LatLng[mmsi]);
-    infowindow[mmsi].setContent(MensajeInfo);
+
+
+              var icono = {
+                        path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                        fillColor: Colores[Tabla[k]['tipo']],
+                        fillOpacity: 0.2,
+                        scale: 4,
+                        strokeColor: Colores[Tabla[k]['tipo']],
+                        strokeWeight: 1,
+                        rotation: Tabla[k]['curso']-360*-1
+                      };
+
+  if (Marker_Real[k]){
+    Marker_Real[k].setPosition(LatLng[k]);
+    infowindow[k].setContent(MensajeInfo);
 
   }else{
         if (Dt<1){
-          // console.log("Entra a crear1");
-          if(Colores[Tabla[k]['tipo']]==undefined)          {Tabla[k]['tipo']='unespecified';}
+          console.log("local5");
+            Marker_Real[k] = new google.maps.Marker({ position: LatLng[k], center: LatLng[k] ,   map: map, icon: icono });
 
-          var icono = {
-                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-                    fillColor: Colores[Tabla[k]['tipo']],    fillOpacity: 1, scale: 4,
-                    strokeColor: Colores[Tabla[k]['tipo']],  strokeWeight: 1,
-                    rotation: Tabla[k]['curso']-360*-1
-                  };
-
-            Marker_Real[mmsi] = new google.maps.Marker({ position: LatLng[mmsi],  map: map, icon: icono });
-
-            infowindow[mmsi] = new google.maps.InfoWindow({   content:  MensajeInfo, strokeColor: 'red' });
-
-            Marker_Real[mmsi].addListener('click', function()
-            {
-            Circulos(k);
-            infowindow[mmsi].open(map,Marker_Real[mmsi]);
-            });
+            infowindow[k] = new google.maps.InfoWindow({   content:  MensajeInfo, strokeColor: 'red' });
+            Marker_Real[k].addListener('click', function() {Circulos(k);  infowindow[k].open(map,Marker_Real[k]); /*  jQuery('.gm-style-iw').prev('div').remove(); */     });
         }
   }
 
@@ -200,33 +157,39 @@ function CerrarTodo(){
 
   for (var o in Tabla){
 
-    if (infowindow[Tabla[o]['mmsi']]) {infowindow[Tabla[o]['mmsi']].close();}
-        if(MarkersCirculos[Tabla[o]['mmsi']]){
-              for (var l=1;l<=NumCirculos;l++){
-                MarkersCirculos[Tabla[o]['mmsi']][l-1].setMap(null);
-              }
-            MarkersCirculos[Tabla[o]['mmsi']]=undefined;
-          }
+    if (infowindow[o]) {infowindow[o].close();}
+    if(MarkersCirculos[o]){for (var l=1;l<=NumCirculos;l++){MarkersCirculos[o][l-1].setMap(null);}MarkersCirculos[o]=undefined;}
   }
 
 }
 function Circulos(j){
-
  for (var o in Tabla){
 
-   if (o!=j && infowindow[Tabla[o]['mmsi']]) {infowindow[Tabla[o]['mmsi']].close();}
-       if(MarkersCirculos[Tabla[o]['mmsi']]){
-             for (var l=1;l<=NumCirculos;l++){
-               MarkersCirculos[Tabla[o]['mmsi']][l-1].setMap(null);
-             }
-         MarkersCirculos[Tabla[o]['mmsi']]=undefined;
-       }
+   if (o!=j && infowindow[o]) {infowindow[o].close();}
+   if(MarkersCirculos[o]){for (var l=1;l<=NumCirculos;l++){MarkersCirculos[o][l-1].setMap(null);}MarkersCirculos[o]=undefined;}
  }
 
   for (var l=1;l<=NumCirculos;l++){
-    circuloss[l-1] = new google.maps.Circle({ center: LatLng[Tabla[j]['mmsi']], radius: l*1000,
+    circuloss[l-1] = new google.maps.Circle({ center: LatLng[j], radius: l*1000,
                                               strokeColor: Colores[Tabla[j]['tipo']],  strokeWeight: 1,
                                               fillOpacity: 0, map: map       });
-    MarkersCirculos[Tabla[j]['mmsi']]=circuloss;
+                                          MarkersCirculos[j]=circuloss;
   }
+
+
 }
+
+function ActualizarId_Barcos(){
+
+  $.post("MySQL/mmsi.php").done(  function( data ) {
+
+    Tabla = JSON.parse(data);
+
+
+    for (i in Tabla){    Markers(i);    }
+
+    Entro=1;
+});
+
+
+ }
