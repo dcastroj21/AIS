@@ -137,8 +137,8 @@ function Markers(k){
   // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombreee</h1></div>'+
   // '</div>';
 
-
- // if (Tabla[k]['tipo']=='Estacion'){console.log("Estacion: "+k);            }
+console.log(Tabla[k]['tipo']);
+ if (Tabla[k]['tipo']=='Estacion'){console.log("Estacion: "+k);            }
               var icono = {
                         path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
                         fillColor: Colores[Tabla[k]['tipo']],
