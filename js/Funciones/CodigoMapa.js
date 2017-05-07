@@ -53,7 +53,7 @@ var Colores={ 'Cargo':'green',                            'Tanker':'red',
 
 var circuloss=[];
 var NumCirculos=5;
-
+var icono;
 
 var mapOptions ={
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -140,14 +140,14 @@ function Markers(k){
 console.log(Tabla[k]['tipo']);
  if (Tabla[k]['tipo']=='Estacion'){
 
-   var icono = {
+   icono = {
              path: 'http://aisproject.ddns.net/images/estacionmarker.png',
-             scale: 4,
+             
 
            };
          }
  else{
-              var icono = {
+            icono = {
                         path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
                         fillColor: Colores[Tabla[k]['tipo']],
                         fillOpacity: 1,
