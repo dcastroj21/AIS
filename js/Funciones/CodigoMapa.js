@@ -129,7 +129,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
               var icono = {
                         path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
                         fillColor: Colores[Tabla[k]['tipo']],
-                        fillOpacity: 0.2,
+                        fillOpacity: 1,
                         scale: 4,
                         strokeColor: Colores[Tabla[k]['tipo']],
                         strokeWeight: 1,
