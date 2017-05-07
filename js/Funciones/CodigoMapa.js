@@ -81,6 +81,16 @@ map.addListener('mousemove', function(e) {
 ActualizarId_Barcos();
 MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
 
+function ActualizarId_Barcos(){
+
+  $.post("MySQL/mmsi.php").done(  function( data ) {
+
+    Tabla = JSON.parse(data);
+    for (i in Tabla){    Markers(i);    }
+
+    Entro=1;
+ });
+ }
 function Markers(k){
 
   dateNow = new Date().getTime();
@@ -103,11 +113,11 @@ function Markers(k){
   var Mt = FechaDiferencia.getMinutes();
   var St = FechaDiferencia.getSeconds();
 
-// console.log(Tabla[k]['mmsi']);
+ // console.log(Tabla[k]['mmsi']);
 
-if(Colores[Tabla[k]['tipo']]==undefined){Tabla[k]['tipo']='unespecified';}
+ if(Colores[Tabla[k]['tipo']]==undefined){Tabla[k]['tipo']='unespecified';}
 
-MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
+ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
               "mmsi: "+Tabla[k]['mmsi']+"<br>"+
               "Tipo: "+Tabla[k]['tipo']+"<br>"+
               "Calado: "+Tabla[k]['calado']+"<br>"+
@@ -128,16 +138,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
   // '</div>';
 
 
-if (Tabla[k]['tipo']=='Estacion'){console.log("Estacion: "+k);
-              // var icono = {
-              //           path: 'http://aisproject.ddns.net/images/estacionmarker.png',
-              //           fillOpacity: 1,
-              //           scale: 4,
-              //           strokeColor: Colores[Tabla[k]['tipo']],
-              //           strokeWeight: 1,
-              //           rotation: Tabla[k]['curso']-360*-1
-              //         };
-            }
+ // if (Tabla[k]['tipo']=='Estacion'){console.log("Estacion: "+k);            }
               var icono = {
                         path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
                         fillColor: Colores[Tabla[k]['tipo']],
@@ -162,8 +163,8 @@ if (Tabla[k]['tipo']=='Estacion'){console.log("Estacion: "+k);
         }
   }
 
-// if (k==1){infowindow[k].open(map,Marker_Real[k]);  }
-}
+ // if (k==1){infowindow[k].open(map,Marker_Real[k]);  }
+ }
 
 function CerrarTodo(){
 
@@ -174,6 +175,7 @@ function CerrarTodo(){
   }
 
 }
+
 function Circulos(j){
  for (var o in Tabla){
 
@@ -190,18 +192,3 @@ function Circulos(j){
 
 
 }
-
-function ActualizarId_Barcos(){
-
-  $.post("MySQL/mmsi.php").done(  function( data ) {
-
-    Tabla = JSON.parse(data);
-
-
-    for (i in Tabla){    Markers(i);    }
-
-    Entro=1;
-});
-
-
- }
