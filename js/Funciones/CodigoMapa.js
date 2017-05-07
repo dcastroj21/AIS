@@ -132,18 +132,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
               "Fecha: "+Tabla[k]['fecha']+"<br>"+
               "Tiempo Transcurrido: "+Ht+"horas"+Mt+"minutos"+St+"segundos";
 
-              if(Colores[Tabla[k]['tipo']]==undefined)
-              {Tabla[k]['tipo']='unespecified';}
 
-              var icono = {
-                        path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
-                        fillColor: Colores[Tabla[k]['tipo']],
-                        fillOpacity: 1,
-                        scale: 4,
-                        strokeColor: Colores[Tabla[k]['tipo']],
-                        strokeWeight: 1,
-                        rotation: Tabla[k]['curso']-360*-1
-                      };
 
   // MensajeInfo =
   // '<div style="width:auto;height:auto" id="content">'+
@@ -157,10 +146,20 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
 
   }else{
         if (Dt<1){
-          // console.log("local5");
+console.log("Entra a crear");
+          if(Colores[Tabla[k]['tipo']]==undefined)          {Tabla[k]['tipo']='unespecified';}
+
+          var icono = {
+                    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                    fillColor: Colores[Tabla[k]['tipo']],    fillOpacity: 1, scale: 4,
+                    strokeColor: Colores[Tabla[k]['tipo']],  strokeWeight: 1,
+                    rotation: Tabla[k]['curso']-360*-1
+                  };
+
             Marker_Real[Tabla[k]['mmsi']] = new google.maps.Marker({ position: LatLng[Tabla[k]['mmsi']],  map: map, icon: icono });
 
             infowindow[Tabla[k]['mmsi']] = new google.maps.InfoWindow({   content:  MensajeInfo, strokeColor: 'red' });
+            
             Marker_Real[Tabla[k]['mmsi']].addListener('click', function()
             {
             Circulos(k);
