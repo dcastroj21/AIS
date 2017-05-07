@@ -142,7 +142,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
 
   if (Marker_Real[Tabla[k]['mmsi']]){
     Marker_Real[Tabla[k]['mmsi']].setPosition(LatLng[Tabla[k]['mmsi']]);
-    infowindow[Tabla[k]['mmsi']].setContent(MensajeInfo);
+    //infowindow[Tabla[k]['mmsi']].setContent(MensajeInfo);
 
   }else{
         if (Dt<1){
