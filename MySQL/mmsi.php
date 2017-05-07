@@ -16,7 +16,12 @@ $consulta=mysql_query("Select T1.* From datos As T1 Inner Join (Select mmsi, Max
 	$tabla[$i]=$reg;
 	$i++;
 }
-
+// print_r($tabla[22]);
+usort($tabla, 'sort_by_orden');
+function sort_by_orden ($a, $b) {
+    return $a['mmsi'] - $b['mmsi'];
+}
+// print_r($tabla);
 echo json_encode($tabla);
 
 mysql_free_result($consulta);

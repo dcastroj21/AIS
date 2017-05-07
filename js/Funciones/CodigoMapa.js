@@ -105,8 +105,8 @@ var orden=[];
    $.post("MySQL/mmsi.php").done(  function( data ) {
 
      Tabla = JSON.parse(data);
-
-    Ordenar();
+console.log(Tabla);
+    //Ordenar();
 
 
      for (i in Tabla){ MMSII(i);    Markers(i);    }
