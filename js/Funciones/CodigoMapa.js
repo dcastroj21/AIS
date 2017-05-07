@@ -117,6 +117,7 @@ function Markers(k){
   var Ht = FechaDiferencia.getHours();
   var Mt = FechaDiferencia.getMinutes();
   var St = FechaDiferencia.getSeconds();
+
 console.log(Tabla[k]['mmsi']);
 
 MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
@@ -134,23 +135,21 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
               if(Colores[Tabla[k]['tipo']]==undefined)
               {Tabla[k]['tipo']='unespecified';}
 
-  // MensajeInfo =
-  // '<div style="width:auto;height:auto" id="content">'+
-  // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombre</h1></div>'+
-  // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombreee</h1></div>'+
-  // '</div>';
-
-
-
               var icono = {
                         path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
                         fillColor: Colores[Tabla[k]['tipo']],
-                        fillOpacity: 0.2,
+                        fillOpacity: 1,
                         scale: 4,
                         strokeColor: Colores[Tabla[k]['tipo']],
                         strokeWeight: 1,
                         rotation: Tabla[k]['curso']-360*-1
                       };
+
+  // MensajeInfo =
+  // '<div style="width:auto;height:auto" id="content">'+
+  // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombre</h1></div>'+
+  // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombreee</h1></div>'+
+  // '</div>';
 
   if (Marker_Real[Tabla[k]['mmsi']]){
     Marker_Real[Tabla[k]['mmsi']].setPosition(LatLng[Tabla[k]['mmsi']]);
@@ -162,7 +161,11 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
             Marker_Real[Tabla[k]['mmsi']] = new google.maps.Marker({ position: LatLng[Tabla[k]['mmsi']],  map: map, icon: icono });
 
             infowindow[Tabla[k]['mmsi']] = new google.maps.InfoWindow({   content:  MensajeInfo, strokeColor: 'red' });
-            Marker_Real[Tabla[k]['mmsi']].addListener('click', function() {Circulos(k);  infowindow[Tabla[k]['mmsi']].open(map,Marker_Real[Tabla[k]['mmsi']]); /*  jQuery('.gm-style-iw').prev('div').remove(); */     });
+            Marker_Real[Tabla[k]['mmsi']].addListener('click', function()
+            {
+            Circulos(k);
+            infowindow[Tabla[k]['mmsi']].open(map,Marker_Real[Tabla[k]['mmsi']]);
+            });
         }
   }
 
