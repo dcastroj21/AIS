@@ -103,7 +103,7 @@ function Markers(k){
   var Mt = FechaDiferencia.getMinutes();
   var St = FechaDiferencia.getSeconds();
 console.log(Tabla[k]['mmsi']);
-console.log("------------");
+console.log("----------");
 MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
               "mmsi: "+Tabla[k]['mmsi']+"<br>"+
               "Tipo: "+Tabla[k]['tipo']+"<br>"+
