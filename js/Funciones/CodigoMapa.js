@@ -54,7 +54,8 @@ var Colores={ 'Cargo':'green',                            'Tanker':'red',
 var circuloss=[];
 var NumCirculos=5;
 var mmsi;
-
+var nmmsi=[];
+var Tabla2=[];
 
 var mapOptions ={
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -87,6 +88,10 @@ ActualizarId_Barcos();
    $.post("MySQL/mmsi.php").done(  function( data ) {
 
      Tabla = JSON.parse(data);
+
+     for (i in Tabla){      nmmsi[i] = Tabla[i]['mmsi'];     }
+     console.log(nmmsi.sort());
+     //for (i in Tabla){ Tabla2[i]}
 
 
      for (i in Tabla){ MMSII(i);    Markers(i);    }
