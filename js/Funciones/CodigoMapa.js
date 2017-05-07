@@ -79,7 +79,7 @@ map.addListener('mousemove', function(e) {
   document.getElementById('coordenadas').innerHTML    =  "Latitud: "+lat+" - Longitud: "+lng;
 });
 
-console.log("1");
+console.log("2");
 ActualizarId_Barcos();
  // MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
 var orden=[];
@@ -96,7 +96,7 @@ var orden=[];
      for (i in Tabla){
 
        for (k in Tabla){
-         if (nmmsi[i]==Tabla[k]['mmsi']){orden[i]=i;}
+         if (nmmsi[i]==Tabla[k]['mmsi']){orden[i]=k;}
        }
      }
 
