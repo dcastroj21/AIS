@@ -138,7 +138,15 @@ function Markers(k){
   // '</div>';
 
 console.log(Tabla[k]['tipo']);
- if (Tabla[k]['tipo']=='Estacion'){console.log("Estacion: "+k);            }
+ if (Tabla[k]['tipo']=='Estacion'){
+
+   var icono = {
+             path: 'http://aisproject.ddns.net/images/estacionmarker.png',
+             scale: 4,
+
+           };
+         }
+ else{
               var icono = {
                         path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
                         fillColor: Colores[Tabla[k]['tipo']],
@@ -148,6 +156,7 @@ console.log(Tabla[k]['tipo']);
                         strokeWeight: 1,
                         rotation: Tabla[k]['curso']-360*-1
                       };
+                    }
 
   if (Marker_Real[k]){
     Marker_Real[k].setPosition(LatLng[k]);
