@@ -80,6 +80,23 @@ map.addListener('mousemove', function(e) {
 });
 
 console.log("3");
+function Ordenar(){
+
+  for (i in Tabla){      nmmsi[i] = Tabla[i]['mmsi'];     }
+  console.log(nmmsi);
+  console.log("---");
+  console.log(nmmsi.sort());
+
+  for (i in Tabla){
+    for (k in Tabla){
+      if (nmmsi[i]==Tabla[k]['mmsi']){orden[i]=k;}
+    }
+  }
+  for (i in Tabla){
+    Tabla2[i]=Tabla[orden[i]];
+  }
+  Tabla=Tabla2;
+}
 ActualizarId_Barcos();
  MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
 var orden=[];
@@ -89,20 +106,7 @@ var orden=[];
 
      Tabla = JSON.parse(data);
 
-     for (i in Tabla){      nmmsi[i] = Tabla[i]['mmsi'];     }
-     console.log(nmmsi);
-     console.log("---");
-     console.log(nmmsi.sort());
-
-     for (i in Tabla){
-       for (k in Tabla){
-         if (nmmsi[i]==Tabla[k]['mmsi']){orden[i]=k;}
-       }
-     }
-     for (i in Tabla){
-       Tabla2[i]=Tabla[orden[i]];
-     }
-     Tabla=Tabla2;
+    Ordernar();
 
 
      for (i in Tabla){ MMSII(i);    Markers(i);    }
