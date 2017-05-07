@@ -79,9 +79,9 @@ map.addListener('mousemove', function(e) {
   document.getElementById('coordenadas').innerHTML    =  "Latitud: "+lat+" - Longitud: "+lng;
 });
 
-console.log("2");
+console.log("3");
 ActualizarId_Barcos();
- // MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
+ MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
 var orden=[];
  function ActualizarId_Barcos(){
 
@@ -162,8 +162,8 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
   // '</div>';
 
   if (Marker_Real[mmsi]){
-    //Marker_Real[mmsi].setPosition(LatLng[mmsi]);
-    //infowindow[mmsi].setContent(MensajeInfo);
+    Marker_Real[mmsi].setPosition(LatLng[mmsi]);
+    infowindow[mmsi].setContent(MensajeInfo);
 
   }else{
         if (Dt<1){
@@ -183,7 +183,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
 
             Marker_Real[mmsi].addListener('click', function()
             {
-            //Circulos(k);
+            Circulos(k);
             infowindow[mmsi].open(map,Marker_Real[mmsi]);
             });
         }
