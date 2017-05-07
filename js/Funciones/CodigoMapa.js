@@ -82,7 +82,7 @@ map.addListener('mousemove', function(e) {
 console.log("1");
 ActualizarId_Barcos();
  // MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
-
+var orden=[];
  function ActualizarId_Barcos(){
 
    $.post("MySQL/mmsi.php").done(  function( data ) {
@@ -90,8 +90,15 @@ ActualizarId_Barcos();
      Tabla = JSON.parse(data);
 
      for (i in Tabla){      nmmsi[i] = Tabla[i]['mmsi'];     }
+     console.log(nmmsi);
+     console.log("---");
      console.log(nmmsi.sort());
-    //  for (i in Tabla){ Tabla2[i]=Tabla}
+     for (i in Tabla){
+
+       for (k in Tabla){
+         if (nmmsi[i]==Tabla[k]['mmsi']){orden[i]=i;}
+       }
+     }
 
 
      for (i in Tabla){ MMSII(i);    Markers(i);    }
@@ -127,7 +134,7 @@ function Markers(k){
   var Mt = FechaDiferencia.getMinutes();
   var St = FechaDiferencia.getSeconds();
 
-console.log(mmsi);
+// console.log(mmsi);
 
 
 MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
@@ -156,7 +163,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
 
   }else{
         if (Dt<1){
-          console.log("Entra a crear1");
+          // console.log("Entra a crear1");
           if(Colores[Tabla[k]['tipo']]==undefined)          {Tabla[k]['tipo']='unespecified';}
 
           var icono = {
