@@ -79,9 +79,9 @@ map.addListener('mousemove', function(e) {
   document.getElementById('coordenadas').innerHTML    =  "Latitud: "+lat+" - Longitud: "+lng;
 });
 
-
+console.log("1");
 ActualizarId_Barcos();
- MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
+ // MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
 
  function ActualizarId_Barcos(){
 
@@ -91,7 +91,7 @@ ActualizarId_Barcos();
 
      for (i in Tabla){      nmmsi[i] = Tabla[i]['mmsi'];     }
      console.log(nmmsi.sort());
-     //for (i in Tabla){ Tabla2[i]}
+     for (i in Tabla){ Tabla2[i]=Tabla}
 
 
      for (i in Tabla){ MMSII(i);    Markers(i);    }
