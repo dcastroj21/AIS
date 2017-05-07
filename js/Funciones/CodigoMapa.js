@@ -79,7 +79,7 @@ map.addListener('mousemove', function(e) {
 
 
 ActualizarId_Barcos();
- MarkerInterval = setInterval(function(){ActualizarId_Barcos()},1000);
+ MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
 
 function Markers(k){
 
@@ -103,6 +103,7 @@ function Markers(k){
   var Mt = FechaDiferencia.getMinutes();
   var St = FechaDiferencia.getSeconds();
 console.log(Tabla[k]['mmsi']);
+console.log("------------");
 MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
               "mmsi: "+Tabla[k]['mmsi']+"<br>"+
               "Tipo: "+Tabla[k]['tipo']+"<br>"+
