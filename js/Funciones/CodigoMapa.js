@@ -36,7 +36,7 @@ var Colores={ 'Cargo':'green',                            'Tanker':'red',
 
               'Pilot Vessel':'yellow',                'Sailing':'magenta',
               'Search and Rescue vessel':'yellow',    'Pleasure Craft':'magenta',
-              'Tug':'NavajoWhite',
+              'Tug':'yellow',
               'Port Tender':'yellow',                 'Fishing':'NavajoWhite',
               'Anti-pollution equipment':'yellow',
               'Law Enforcement':'yellow',             'unespecified':'gray',
@@ -79,7 +79,7 @@ map.addListener('mousemove', function(e) {
 
 
 ActualizarId_Barcos();
- MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
+MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
 
 function Markers(k){
 
@@ -102,7 +102,11 @@ function Markers(k){
   var Ht = FechaDiferencia.getHours();
   var Mt = FechaDiferencia.getMinutes();
   var St = FechaDiferencia.getSeconds();
-console.log(Tabla[k]['mmsi']);
+
+// console.log(Tabla[k]['mmsi']);
+
+if(Colores[Tabla[k]['tipo']]==undefined){Tabla[k]['tipo']='unespecified';}
+
 MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
               "mmsi: "+Tabla[k]['mmsi']+"<br>"+
               "Tipo: "+Tabla[k]['tipo']+"<br>"+
@@ -115,8 +119,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
               "Fecha: "+Tabla[k]['fecha']+"<br>"+
               "Tiempo Transcurrido: "+Ht+"horas"+Mt+"minutos"+St+"segundos";
 
-              if(Colores[Tabla[k]['tipo']]==undefined)
-              {Tabla[k]['tipo']='unespecified';}
+
 
   // MensajeInfo =
   // '<div style="width:auto;height:auto" id="content">'+
@@ -125,7 +128,16 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
   // '</div>';
 
 
-
+if (Tabla[k]['tipo']=='Estacion'){console.log("Estacion: "+k);
+              // var icono = {
+              //           path: 'http://aisproject.ddns.net/images/estacionmarker.png',
+              //           fillOpacity: 1,
+              //           scale: 4,
+              //           strokeColor: Colores[Tabla[k]['tipo']],
+              //           strokeWeight: 1,
+              //           rotation: Tabla[k]['curso']-360*-1
+              //         };
+            }
               var icono = {
                         path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
                         fillColor: Colores[Tabla[k]['tipo']],
@@ -142,11 +154,11 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
 
   }else{
         if (Dt<1){
-          console.log("local5");
+          // console.log("local5");
             Marker_Real[k] = new google.maps.Marker({ position: LatLng[k], center: LatLng[k] ,   map: map, icon: icono });
 
             infowindow[k] = new google.maps.InfoWindow({   content:  MensajeInfo, strokeColor: 'red' });
-            Marker_Real[k].addListener('click', function() {Circulos(k);  infowindow[k].open(map,Marker_Real[k]); /*  jQuery('.gm-style-iw').prev('div').remove(); */     });
+            Marker_Real[k].addListener('click', function() {Circulos(k);  infowindow[k].open(map,Marker_Real[k]);    });
         }
   }
 
