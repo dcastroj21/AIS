@@ -79,7 +79,7 @@ map.addListener('mousemove', function(e) {
   document.getElementById('coordenadas').innerHTML    =  "Latitud: "+lat+" - Longitud: "+lng;
 });
 
-console.log("4");
+console.log("4hppp");
 function Ordenar(){
 
   for (i in Tabla){      nmmsi[i] = Tabla[i]['mmsi'];     }
