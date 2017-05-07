@@ -53,6 +53,7 @@ var Colores={ 'Cargo':'green',                            'Tanker':'red',
 
 var circuloss=[];
 var NumCirculos=5;
+var mmsi;
 
 
 var mapOptions ={
@@ -88,21 +89,24 @@ ActualizarId_Barcos();
      Tabla = JSON.parse(data);
 
 
-     for (i in Tabla){    Markers(i);    }
+     for (i in Tabla){ MMSII(i);    Markers(i);    }
      console.log("----------");
 
      Entro=1;
  });
 
   }
+function MMSII(p){
 
+  mmsi = Tabla[p]['mmsi'];
+}
 function Markers(k){
 
   dateNow = new Date().getTime();
   // Latitud[k]=Tabla[k]['latitud'];
   // Longitud[k]=Tabla[k]['longitud'];
 
-  LatLng[Tabla[k]['mmsi']]=new google.maps.LatLng(parseFloat(Tabla[k]['latitud']),parseFloat(Tabla[k]['longitud']));
+  LatLng[mmsi]=new google.maps.LatLng(parseFloat(Tabla[k]['latitud']),parseFloat(Tabla[k]['longitud']));
 
   dateBefore=new Date(Tabla[k]['fecha']).getTime();
 
@@ -118,10 +122,11 @@ function Markers(k){
   var Mt = FechaDiferencia.getMinutes();
   var St = FechaDiferencia.getSeconds();
 
-console.log(Tabla[k]['mmsi']);
+console.log(mmsi);
+
 
 MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
-              "mmsi: "+Tabla[k]['mmsi']+"<br>"+
+              "mmsi: "+mmsi+"<br>"+
               "Tipo: "+Tabla[k]['tipo']+"<br>"+
               "Calado: "+Tabla[k]['calado']+"<br>"+
               "Status: "+Tabla[k]['status']+"<br>"+
@@ -140,9 +145,9 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
   // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombreee</h1></div>'+
   // '</div>';
 
-  if (Marker_Real[Tabla[k]['mmsi']]){
-    Marker_Real[Tabla[k]['mmsi']].setPosition(LatLng[Tabla[k]['mmsi']]);
-    //infowindow[Tabla[k]['mmsi']].setContent(MensajeInfo);
+  if (Marker_Real[mmsi]){
+    //Marker_Real[mmsi].setPosition(LatLng[mmsi]);
+    //infowindow[mmsi].setContent(MensajeInfo);
 
   }else{
         if (Dt<1){
@@ -156,14 +161,14 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
                     rotation: Tabla[k]['curso']-360*-1
                   };
 
-            Marker_Real[Tabla[k]['mmsi']] = new google.maps.Marker({ position: LatLng[Tabla[k]['mmsi']],  map: map, icon: icono });
+            Marker_Real[mmsi] = new google.maps.Marker({ position: LatLng[mmsi],  map: map, icon: icono });
 
-            infowindow[Tabla[k]['mmsi']] = new google.maps.InfoWindow({   content:  MensajeInfo, strokeColor: 'red' });
+            infowindow[mmsi] = new google.maps.InfoWindow({   content:  MensajeInfo, strokeColor: 'red' });
 
-            Marker_Real[Tabla[k]['mmsi']].addListener('click', function()
+            Marker_Real[mmsi].addListener('click', function()
             {
             //Circulos(k);
-            infowindow[Tabla[k]['mmsi']].open(map,Marker_Real[Tabla[k]['mmsi']]);
+            infowindow[mmsi].open(map,Marker_Real[mmsi]);
             });
         }
   }
