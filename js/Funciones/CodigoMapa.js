@@ -34,21 +34,21 @@ var Colores={ 'Cargo':'green',                            'Tanker':'red',
               'High speed craft - Hazardous category D':'yellow',     'Passenger - Hazardous category D':'darkblue',
               'High speed craft - RFU':'yellow',                      'Passenger - RFU':'darkblue',
 
-              'Pilot Vessel':'yellow',                'Sailing':'darkblue',
-              'Search and Rescue vessel':'yellow',    'Pleasure Craft':'darkblue',
-              'Tug':'yellow',
-              'Port Tender':'yellow',                 'Fishing':'darkblue',
-              'Anti-pollution equipment':'yellow',
-              'Law Enforcement':'yellow',             'unespecified':'gray',
-              'Spare - Local Vessel':'yellow',
-              'Medical Transport':'yellow',
-              'Noncombatant ship according to RR Resolution':'yellow',
-              'Towing':'yellow',
-              'Towing: length exceeds 200m or breadth exceed':'yellow',
-              'Dredging or underwater ops':'yellow',
-              'Diving ops':'yellow',
-              'Military ops':'yellow',
-              'Reserved':'yellow',};
+              'Pilot Vessel':'cyan',                'Sailing':'magenta',
+              'Search and Rescue vessel':'cyan',    'Pleasure Craft':'magenta',
+              'Tug':'cyan',
+              'Port Tender':'cyan',                 'Fishing':'NavajoWhite',
+              'Anti-pollution equipment':'cyan',
+              'Law Enforcement':'cyan',             'unespecified':'gray',
+              'Spare - Local Vessel':'cyan',
+              'Medical Transport':'cyan',
+              'Noncombatant ship according to RR Resolution':'cyan',
+              'Towing':'cyan',
+              'Towing: length exceeds 200m or breadth exceed':'cyan',
+              'Dredging or underwater ops':'cyan',
+              'Diving ops':'cyan',
+              'Military ops':'cyan',
+              'Reserved':'cyan',};
 
 
 var circuloss=[];
@@ -79,15 +79,15 @@ map.addListener('mousemove', function(e) {
 
 
 ActualizarId_Barcos();
- MarkerInterval = setInterval(function(){ActualizarId_Barcos()},2000);
+ // MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
 
 function Markers(k){
 
   dateNow = new Date().getTime();
-  Latitud[k]=Tabla[k]['latitud'];
-  Longitud[k]=Tabla[k]['longitud'];
+  // Latitud[k]=Tabla[k]['latitud'];
+  // Longitud[k]=Tabla[k]['longitud'];
 
-  LatLng[Tabla[k]['mmsi']]=new google.maps.LatLng(parseFloat(Latitud[k]),parseFloat(Longitud[k]));
+  LatLng[Tabla[k]['mmsi']]=new google.maps.LatLng(parseFloat(Tabla[k]['latitud']),parseFloat(Tabla[k]['longitud']));
 
   dateBefore=new Date(Tabla[k]['fecha']).getTime();
 
@@ -102,7 +102,7 @@ function Markers(k){
   var Ht = FechaDiferencia.getHours();
   var Mt = FechaDiferencia.getMinutes();
   var St = FechaDiferencia.getSeconds();
-// console.log(Tabla[k]['mmsi']);
+console.log(Tabla[k]['mmsi']);
 MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
               "mmsi: "+Tabla[k]['mmsi']+"<br>"+
               "Tipo: "+Tabla[k]['tipo']+"<br>"+
