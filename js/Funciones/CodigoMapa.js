@@ -146,7 +146,7 @@ MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
 
   }else{
         if (Dt<1){
-console.log("Entra a crear");
+          console.log("Entra a crear");
           if(Colores[Tabla[k]['tipo']]==undefined)          {Tabla[k]['tipo']='unespecified';}
 
           var icono = {
@@ -159,10 +159,10 @@ console.log("Entra a crear");
             Marker_Real[Tabla[k]['mmsi']] = new google.maps.Marker({ position: LatLng[Tabla[k]['mmsi']],  map: map, icon: icono });
 
             infowindow[Tabla[k]['mmsi']] = new google.maps.InfoWindow({   content:  MensajeInfo, strokeColor: 'red' });
-            
+
             Marker_Real[Tabla[k]['mmsi']].addListener('click', function()
             {
-            Circulos(k);
+            //Circulos(k);
             infowindow[Tabla[k]['mmsi']].open(map,Marker_Real[Tabla[k]['mmsi']]);
             });
         }
@@ -176,7 +176,12 @@ function CerrarTodo(){
   for (var o in Tabla){
 
     if (infowindow[Tabla[o]['mmsi']]) {infowindow[Tabla[o]['mmsi']].close();}
-    if(MarkersCirculos[Tabla[o]['mmsi']]){for (var l=1;l<=NumCirculos;l++){MarkersCirculos[Tabla[o]['mmsi']][l-1].setMap(null);}MarkersCirculos[Tabla[o]['mmsi']]=undefined;}
+        if(MarkersCirculos[Tabla[o]['mmsi']]){
+              for (var l=1;l<=NumCirculos;l++){
+                MarkersCirculos[Tabla[o]['mmsi']][l-1].setMap(null);
+              }
+            MarkersCirculos[Tabla[o]['mmsi']]=undefined;
+          }
   }
 
 }
@@ -185,7 +190,12 @@ function Circulos(j){
  for (var o in Tabla){
 
    if (o!=j && infowindow[Tabla[o]['mmsi']]) {infowindow[Tabla[o]['mmsi']].close();}
-   if(MarkersCirculos[Tabla[o]['mmsi']]){for (var l=1;l<=NumCirculos;l++){MarkersCirculos[Tabla[o]['mmsi']][l-1].setMap(null);}MarkersCirculos[Tabla[o]['mmsi']]=undefined;}
+       if(MarkersCirculos[Tabla[o]['mmsi']]){
+             for (var l=1;l<=NumCirculos;l++){
+               MarkersCirculos[Tabla[o]['mmsi']][l-1].setMap(null);
+             }
+         MarkersCirculos[Tabla[o]['mmsi']]=undefined;
+       }
  }
 
   for (var l=1;l<=NumCirculos;l++){
@@ -194,6 +204,4 @@ function Circulos(j){
                                               fillOpacity: 0, map: map       });
     MarkersCirculos[Tabla[j]['mmsi']]=circuloss;
   }
-
-
 }
