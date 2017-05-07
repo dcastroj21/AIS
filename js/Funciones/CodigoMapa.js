@@ -79,7 +79,7 @@ map.addListener('mousemove', function(e) {
 
 
 ActualizarId_Barcos();
- // MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
+ MarkerInterval = setInterval(function(){ActualizarId_Barcos()},2000);
 
 function Markers(k){
 
