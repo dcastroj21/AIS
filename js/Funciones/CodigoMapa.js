@@ -91,7 +91,7 @@ ActualizarId_Barcos();
 
      for (i in Tabla){      nmmsi[i] = Tabla[i]['mmsi'];     }
      console.log(nmmsi.sort());
-     for (i in Tabla){ Tabla2[i]=Tabla}
+    //  for (i in Tabla){ Tabla2[i]=Tabla}
 
 
      for (i in Tabla){ MMSII(i);    Markers(i);    }
