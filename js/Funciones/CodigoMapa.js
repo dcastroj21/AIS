@@ -81,6 +81,21 @@ map.addListener('mousemove', function(e) {
 ActualizarId_Barcos();
  MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
 
+ function ActualizarId_Barcos(){
+
+   $.post("MySQL/mmsi.php").done(  function( data ) {
+
+     Tabla = JSON.parse(data);
+
+
+     for (i in Tabla){    Markers(i);    }
+     console.log("----------");
+
+     Entro=1;
+ });
+
+  }
+
 function Markers(k){
 
   dateNow = new Date().getTime();
@@ -103,7 +118,7 @@ function Markers(k){
   var Mt = FechaDiferencia.getMinutes();
   var St = FechaDiferencia.getSeconds();
 console.log(Tabla[k]['mmsi']);
-console.log("----------");
+
 MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
               "mmsi: "+Tabla[k]['mmsi']+"<br>"+
               "Tipo: "+Tabla[k]['tipo']+"<br>"+
@@ -180,18 +195,3 @@ function Circulos(j){
 
 
 }
-
-function ActualizarId_Barcos(){
-
-  $.post("MySQL/mmsi.php").done(  function( data ) {
-
-    Tabla = JSON.parse(data);
-
-
-    for (i in Tabla){    Markers(i);    }
-
-    Entro=1;
-});
-
-
- }
