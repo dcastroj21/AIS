@@ -89,7 +89,7 @@ ActualizarId_Barcos();
 
 
      for (i in Tabla){    Markers(i);    }
-     console.log("---------");
+     console.log("----------");
 
      Entro=1;
  });
