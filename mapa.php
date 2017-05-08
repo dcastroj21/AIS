@@ -65,16 +65,24 @@
 
 <tr>
   <th style="text-align:center;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">Color</th>
-  <th style="text-align:center;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">Tipo</th>   </tr>
+  <th style="text-align:center;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">Tipo</th> </tr>
 
-<tr> <td style="background-color:green;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Cargo</td></tr>
-<tr> <td style="background-color:red;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Tanker</td></tr>
-<tr> <td style="background-color:yellow;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Hsc</td></tr>
-<tr> <td style="background-color:darkblue;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Passenger</td></tr>
-<tr> <td style="background-color:cyan;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>TugAndSpecial</td></tr>
-<tr> <td style="background-color:NavajoWhite;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Fishing</td></tr>
-<tr> <td style="background-color:magenta;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Pleasure</td></tr>
-<tr> <td style="background-color:gray;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Unespecified</td></tr>
+<tr >   <td style="background-color:green;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td>
+        <td style="border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">Cargo</td></tr>
+<tr>    <td style="background-color:red;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td>
+        <td style="border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">Tanker</td></tr>
+<tr>    <td style="background-color:yellow;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td>
+        <td style="border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">Hsc</td></tr>
+<tr>    <td style="background-color:darkblue;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td>
+        <td style="border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">Passenger</td></tr>
+<tr>    <td style="background-color:cyan;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td>
+        <td style="border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">TugAndSpecial</td></tr>
+<tr>    <td style="background-color:NavajoWhite;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td>
+        <td style="border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">Fishing</td></tr>
+<tr>    <td style="background-color:magenta;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td>
+        <td style="border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">Pleasure</td></tr>
+<tr>    <td style="background-color:gray;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td>
+        <td style="border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">Unespecified</td></tr>
 </table>
 </div>
 
