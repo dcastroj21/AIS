@@ -81,6 +81,9 @@
 
 <style type="text/css">
 
+table{    border-spacing: 10px;    border-collapse: collapse;}
+th,td,tr{    border: 1px solid red;    color: black;    margin-top: 10px;    font-weight: bold;    padding: 5px 5px 2px 3px;}
+
 
 #pesos{    background-color: white;    border: 1px solid white;}
 .clapesos{    text-align: center;}
