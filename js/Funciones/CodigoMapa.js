@@ -68,9 +68,12 @@ map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(  document.getElement
 map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(  document.getElementById('BotonColores'));
 
 
-google.maps.event.addListenerOnce(map, 'idle', function(){
-    jQuery('.gm-style-iw').prev().remove();
-});
+// google.maps.event.addListenerOnce(map, 'idle', function(){
+//     jQuery('.gm-style-iw').prev().remove();
+// });
+
+
+
 
 map.addListener('click', function() { CerrarTodo(); });
 map.addListener('mousemove', function(e) {
@@ -80,9 +83,9 @@ map.addListener('mousemove', function(e) {
   document.getElementById('coordenadas').innerHTML    =  "Latitud: "+lat+" - Longitud: "+lng;
 });
 
-
+console.log("nojoda");
 ActualizarId_Barcos();
-MarkerInterval = setInterval(function(){ActualizarId_Barcos()},10000);
+MarkerInterval = setInterval(function(){ActualizarId_Barcos()},1000);
 
 function ActualizarId_Barcos(){
 
@@ -134,13 +137,22 @@ function Markers(k){
 
 
 
-  // MensajeInfo =
-  // '<div style="width:auto;height:auto" id="content">'+
-  // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombre</h1></div>'+
-  // '<div style="width:auto;height:auto"  ><h1 style="font: bold 50px Arial;color:red;background-color:black;width:auto;height:auto;text-align:left" >Nombreee</h1></div>'+
-  // '</div>';
+   MensajeInfo = '<div id="iw-container">' +
+                    '<div class="iw-title">Porcelain Factory of Vista Alegre</div>' +
+                    '<div class="iw-content">' +
+                      '<div class="iw-subTitle">History</div>' +
+                      '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                      '<p>Founded in 1824, the Porcelain Factory of Vista Alegre was the first industrial unit dedicated to porcelain production in Portugal. For the foundation and success of this risky industrial development was crucial the spirit of persistence of its founder, José Ferreira Pinto Basto. Leading figure in Portuguese society of the nineteenth century farm owner, daring dealer, wisely incorporated the liberal ideas of the century, having become "the first example of free enterprise" in Portugal.</p>' +
+                      '<div class="iw-subTitle">Contacts</div>' +
+                      '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
+                      '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
+                    '</div>' +
+                    '<div class="iw-bottom-gradient"></div>' +
+                  '</div>';
 
-// console.log(Tabla[k]['tipo']);
+  // MensajeInfo =
+  // '<div id="iw-container" ><h5 style="text-align:right;color:red;">NOMBREEEE</h5></br></div>';
+
 
 
             icono = {
@@ -155,8 +167,8 @@ function Markers(k){
 
 
   if (Marker_Real[k]){
-    Marker_Real[k].setPosition(LatLng[k]);
-    infowindow[k].setContent(MensajeInfo);
+   Marker_Real[k].setPosition(LatLng[k]);
+   infowindow[k].setContent(MensajeInfo);
 
   }else{
         if (Dt<1){
@@ -169,13 +181,37 @@ function Markers(k){
             Marker_Real[k] = new google.maps.Marker({ position: LatLng[k],    map: map, icon: icono });
 }
             infowindow[k] = new google.maps.InfoWindow({   content:  MensajeInfo, strokeColor: 'red' });
-            Marker_Real[k].addListener('click', function() {Circulos(k);  infowindow[k].open(map,Marker_Real[k]);    });
+
+            google.maps.event.addListener(infowindow[k], 'domready', function() {
+
+              var iwOuter = $('.gm-style-iw');
+              var iwBackground = iwOuter.prev();
+              iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+              iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+              iwOuter.parent().parent().css({left: '115px'});
+              iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+              iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+              iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
+              var iwCloseBtn = iwOuter.next();
+              iwCloseBtn.css({opacity: '1', right: '38px', top: '3px', border: '7px solid #48b5e9', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+              if($('.iw-content').height() < 140){
+                $('.iw-bottom-gradient').css({display: 'none'});
+              }
+              // The API automatically applies 0.7 opacity to the button after the mouseout event. This function reverses this event to the desired value.
+              iwCloseBtn.mouseout(function(){      $(this).css({opacity: '1'});    });
+            });
+
+
+
+
+
+            Marker_Real[k].addListener('click', function() {Circulos(k); /*jQuery('.gm-style-iw').prev('div').remove();*/   infowindow[k].open(map,Marker_Real[k]);       });
         }
   }
 
- // if (k==1){infowindow[k].open(map,Marker_Real[k]);  }
+ // if (k==1 && unavez){ jQuery('.gm-style-iw').prev('div').remove(); infowindow[k].open(map,Marker_Real[k]); unavez=0;  }
  }
-
+var unavez=1;
 function CerrarTodo(){
 
   document.getElementById('BotonColores').style.display='inline-block';
@@ -190,11 +226,11 @@ function CerrarTodo(){
 }
 
 function Circulos(j){
- for (var o in Tabla){
+     for (var o in Tabla){
 
-   if (o!=j && infowindow[o]) {infowindow[o].close();}
-   if(MarkersCirculos[o]){for (var l=1;l<=NumCirculos;l++){MarkersCirculos[o][l-1].setMap(null);}MarkersCirculos[o]=undefined;}
- }
+       if (o!=j && infowindow[o]) {infowindow[o].close();}
+       if(MarkersCirculos[o]){for (var l=1;l<=NumCirculos;l++){MarkersCirculos[o][l-1].setMap(null);}MarkersCirculos[o]=undefined;}
+     }
 
   for (var l=1;l<=NumCirculos;l++){
     circuloss[l-1] = new google.maps.Circle({ center: LatLng[j], radius: l*1000,
@@ -204,7 +240,7 @@ function Circulos(j){
   }
 
 
-}
+ }
 
 function MostrarColores(){
 
