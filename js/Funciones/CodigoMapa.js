@@ -68,16 +68,8 @@ map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(  document.getElement
 map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(  document.getElementById('BotonColores'));
 
 
-// google.maps.event.addListenerOnce(map, 'idle', function(){
-//     jQuery('.gm-style-iw').prev().remove();
-// });
-
-
-
-
 map.addListener('click', function() { CerrarTodo(); });
 map.addListener('mousemove', function(e) {
-  // console.log("move");
   var lat = ""+e.latLng.lat(); lat = lat.substr(0,8);
   var lng = ""+e.latLng.lng(); lng = lng.substr(0,9);
   document.getElementById('coordenadas').innerHTML    =  "Latitud: "+lat+" - Longitud: "+lng;
@@ -117,7 +109,6 @@ function Markers(k){
   var Mt = FechaDiferencia.getMinutes();
   var St = FechaDiferencia.getSeconds();
 
- // console.log(Tabla[k]['mmsi']);
 
  if(Colores[Tabla[k]['tipo']]==undefined){Tabla[k]['tipo']='unespecified';}
 
@@ -186,9 +177,6 @@ function Markers(k){
                     '</div>' +
 
                     '</div>';
-
-  // MensajeInfo =
-  // '<div id="iw-container" ><h5 style="text-align:right;color:red;">NOMBREEEE</h5></br></div>';
 
 
 

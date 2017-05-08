@@ -61,28 +61,32 @@
   <input type = "button" class="Botones_Mapa" id="BotonColores" value="Colores" onclick="MostrarColores();">
 
 <div id="colores" style="display:none" >
-  <table border="1">
+  <table style="border=1;border-spacing: 10px;    border-collapse: collapse;">
 
-<tr>   <th style="text-align:center">Color</th>   <th style="text-align:center">Tipo</th>   </tr>
+<tr>
+  <th style="text-align:center;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">Color</th>
+  <th style="text-align:center;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;">Tipo</th>   </tr>
 
-<tr> <td style="background-color:green"></td> <td>Cargo</td></tr>
-<tr> <td style="background-color:red"></td> <td>Tanker</td></tr>
-<tr> <td style="background-color:yellow"></td> <td>Hsc</td></tr>
-<tr> <td style="background-color:darkblue"></td> <td>Passenger</td></tr>
-<tr> <td style="background-color:cyan"></td> <td>TugAndSpecial</td></tr>
-<tr> <td style="background-color:NavajoWhite"></td> <td>Fishing</td></tr>
-<tr> <td style="background-color:magenta"></td> <td>Pleasure</td></tr>
-<tr> <td style="background-color:gray"></td> <td>Unespecified</td></tr>
+<tr> <td style="background-color:green;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Cargo</td></tr>
+<tr> <td style="background-color:red;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Tanker</td></tr>
+<tr> <td style="background-color:yellow;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Hsc</td></tr>
+<tr> <td style="background-color:darkblue;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Passenger</td></tr>
+<tr> <td style="background-color:cyan;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>TugAndSpecial</td></tr>
+<tr> <td style="background-color:NavajoWhite;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Fishing</td></tr>
+<tr> <td style="background-color:magenta;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Pleasure</td></tr>
+<tr> <td style="background-color:gray;border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;"></td> <td>Unespecified</td></tr>
 </table>
 </div>
 
 
 
+<!-- th,td,tr{    border: 1px solid red;color: black;margin-top: 10px;font-weight: bold;padding: 5px 5px 2px 3px;} -->
+
+
+
+
 
 <style type="text/css">
-
-table{    border-spacing: 10px;    border-collapse: collapse;}
-th,td,tr{    border: 1px solid red;    color: black;    margin-top: 10px;    font-weight: bold;    padding: 5px 5px 2px 3px;}
 
 
 #pesos{    background-color: white;    border: 1px solid white;}
