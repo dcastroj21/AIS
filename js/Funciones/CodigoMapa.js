@@ -85,10 +85,10 @@ map.addListener('mousemove', function(e) {
 
 console.log("nojoda");
 ActualizarId_Barcos();
-MarkerInterval = setInterval(function(){ActualizarId_Barcos()},1000);
+MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
 
 function ActualizarId_Barcos(){
-
+console.log("actualiza");
   $.post("MySQL/mmsi.php").done(  function( data ) {
 
     Tabla = JSON.parse(data);
@@ -142,7 +142,7 @@ function Markers(k){
                     '<div class="iw-content">' +
                       '<div class="iw-subTitle">History</div>' +
                       '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                      '<p>Founded in 1824, the Porcelain Factory of Vista Alegre was the first industrial unit dedicated to porcelain production in Portugal. For the foundation and success of this risky industrial development was crucial the spirit of persistence of its founder, José Ferreira Pinto Basto. Leading figure in Portuguese society of the nineteenth century farm owner, daring dealer, wisely incorporated the liberal ideas of the century, having become "the first example of free enterprise" in Portugal.</p>' +
+                      '<p>Founded in 1824, sely incorporated the liberal ideas of the century, having become "the first example of free enterprise" in Portugal.</p>' +
                       '<div class="iw-subTitle">Contacts</div>' +
                       '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
                       '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
