@@ -83,12 +83,10 @@ map.addListener('mousemove', function(e) {
   document.getElementById('coordenadas').innerHTML    =  "Latitud: "+lat+" - Longitud: "+lng;
 });
 
-console.log("nojoda");
 ActualizarId_Barcos();
-MarkerInterval = setInterval(function(){ActualizarId_Barcos()},1000);
+MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
 
 function ActualizarId_Barcos(){
-console.log("actualiza");
   $.post("MySQL/mmsi.php").done(  function( data ) {
 
     Tabla = JSON.parse(data);
@@ -123,27 +121,71 @@ function Markers(k){
 
  if(Colores[Tabla[k]['tipo']]==undefined){Tabla[k]['tipo']='unespecified';}
 
- MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
-              "mmsi: "+Tabla[k]['mmsi']+"<br>"+
-              "Tipo: "+Tabla[k]['tipo']+"<br>"+
-              "Calado: "+Tabla[k]['calado']+"<br>"+
-              "Status: "+Tabla[k]['status']+"<br>"+
-              "Latitud: "+Tabla[k]['latitud']+"°<br>"+
-              "Longitud: "+Tabla[k]['longitud']+"°<br>"+
-              "Velocidad: "+Tabla[k]['velocidad']+" knots<br>"+
-              "Curso: "+Tabla[k]['curso']+"°<br>"+
-              "Fecha: "+Tabla[k]['fecha']+"<br>"+
-              "Tiempo Transcurrido: "+Ht+"horas"+Mt+"minutos"+St+"segundos";
+ // MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
+ //              "mmsi: "+Tabla[k]['mmsi']+"<br>"+
+ //              "Tipo: "+Tabla[k]['tipo']+"<br>"+
+ //              "Calado: "+Tabla[k]['calado']+"<br>"+
+ //              "Status: "+Tabla[k]['status']+"<br>"+
+ //              "Latitud: "+Tabla[k]['latitud']+"°<br>"+
+ //              "Longitud: "+Tabla[k]['longitud']+"°<br>"+
+ //              "Velocidad: "+Tabla[k]['velocidad']+" knots<br>"+
+ //              "Curso: "+Tabla[k]['curso']+"°<br>"+
+ //              "Fecha: "+Tabla[k]['fecha']+"<br>"+
+ //              "Tiempo Transcurrido: "+Ht+"horas"+Mt+"minutos"+St+"segundos";
 
 
 
    MensajeInfo = '<div id="iw-container">' +
-                    '<div class="iw-title">Porcelain Factory of Vista Alegre</div>' +
-                    '<div class="iw-content">' +
-                      '<p>Founded in 1824, sely incorporated the liberal ideas of the century, having become "the first example of free enterprise" in Portugal.</p>' +
+                    '<div class="iw-nombre" >'+Tabla[k]['nombre']+'</div>' +
+                    '<div class="iw-tipo">'+Tabla[k]['tipo']+'</div>' +
+                    '<div class="iw-estado">'+Tabla[k]['status']+'</div>' +
+
+                    '<div class="iw-otros">'+
+                    '<table border="1" ><tr>'+
+
+                    '<th style="width:83px;text-align:center;font-size:15px;color:black;">Velocidad</th>'+
+                    '<th style="width:83px;text-align:center;font-size:15px;color:black;">Rumbo</th>'+
+                    '<th style="width:83px;text-align:center;font-size:15px;color:black;">Calado</th>'+
+
+                    '</tr><tr> '+
+
+                    '<td style="text-align:center;font-size:17px;color:black;">'+Tabla[k]['velocidad']+' knots</td>'+
+                    '<td style="text-align:center;font-size:17px;color:black;">'+Tabla[k]['curso']+'°</td>'+
+                    '<td style="text-align:center;font-size:17px;color:black;">'+Tabla[k]['calado']+'m</td>'+
+
+                    '</tr></table>'+
                     '</div>' +
 
-                  '</div>';
+                    '<div class="iw-otros">'+
+                    '<table border="1" ><tr>'+
+
+                    '<th style="width:83px;text-align:center;font-size:15px;color:black;">Latitud</th>'+
+                    '<td style="width:166px;text-align:center;font-size:15px;color:black;">'+Tabla[k]['latitud']+'°</td>'+
+
+                    '</tr><tr> '+
+
+                    '<th style="width:83px;text-align:center;font-size:15px;color:black;">Longitud</th>'+
+                    '<td style="text-align:center;font-size:15px;color:black;">'+Tabla[k]['longitud']+'°</td>'+
+
+                    '</tr><tr> '+
+
+                    '<th style="width:83px;text-align:center;font-size:15px;color:black;">mmsi</th>'+
+                    '<td style="text-align:center;font-size:15px;color:black;">'+Tabla[k]['mmsi']+'</td>'+
+
+                    '</tr></table>'+
+                    '</div>' +
+
+                    '<div class="iw-otros">'+
+                    '<table border="1" ><tr>'+
+
+                    '<th style="width:83px;text-align:center;font-size:15px;color:black;">Recibido</th>'+
+                    '<th style="width:166px;text-align:center;font-size:15px;color:black;">'+Ht+"h,"+Mt+"m,"+St+"s"+'</th>'+
+
+
+                    '</tr></table>'+
+                    '</div>' +
+
+                    '</div>';
 
   // MensajeInfo =
   // '<div id="iw-container" ><h5 style="text-align:right;color:red;">NOMBREEEE</h5></br></div>';
@@ -184,32 +226,17 @@ function Markers(k){
               iwBackground.children(':nth-child(2)').css({'display' : 'none'});
               iwBackground.children(':nth-child(4)').css({'display' : 'none'});
               iwBackground.children(':nth-child(1)').css({'display' : 'none'});
-              // iwBackground.children(':nth-child(3)').css({'display' : 'none'});
-              // iwBackground.children(':nth-child(5)').css({'display' : 'none'});
-              // iwBackground.children(':nth-child(6)').css({'display' : 'none'});
-
-              // iwOuter.parent().parent().css({left: '115px'});
-              // iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;display:inline-block'});
-              // iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
-              // iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
               var iwCloseBtn = iwOuter.next();
-              iwCloseBtn.css({opacity: '1', right: '38px', top: '10px'});
-                // $('.iw-bottom-gradient').css({display: 'none'});
-              // The API automatically applies 0.7 opacity to the button after the mouseout event. This function reverses this event to the desired value.
-              // iwCloseBtn.mouseout(function(){      $(this).css({opacity: '1'});    });
+              iwCloseBtn.css({opacity: '0.5', right: '37px', top: '13px'});
             });
 
-
-
-
-
-            Marker_Real[k].addListener('click', function() {Circulos(k); /*jQuery('.gm-style-iw').prev('div').remove();*/   infowindow[k].open(map,Marker_Real[k]);       });
+            Marker_Real[k].addListener('click', function() {Circulos(k); infowindow[k].open(map,Marker_Real[k]);       });
         }
   }
 
- if (k==1 && unavez){  infowindow[k].open(map,Marker_Real[k]); unavez=0;  }
+ // if (k==1 && unavez){  infowindow[k].open(map,Marker_Real[k]); unavez=0;  }
  }
-var unavez=1;
+// var unavez=1;
 function CerrarTodo(){
 
   document.getElementById('BotonColores').style.display='inline-block';

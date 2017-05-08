@@ -399,37 +399,44 @@ p {display: inline;}
     color:rebeccapurple;
 }
 
-#map {
-    margin: 0;
-    padding: 0;
-    height: 400px;
-    max-width: none;
-}
-#map img {
-    max-width: none !important;
-}
+
 .gm-style-iw {
-    width: 350px !important;
-    top: 15px !important;
-    left: 0px !important;
-    background-color: #ff0;
-    box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
-    border: 1px solid rgba(72, 181, 233, 0.6);
-    border-radius: 2px 2px 10px 10px;
+    width: 250px !important;
+    height: 201px;
+    margin-top:4px;
+    background-color: #fff;
 }
-#iw-container {
-    margin-bottom: 10px;
-}
-#iw-container .iw-title {
-    font-family: 'Open Sans Condensed', sans-serif;
+#iw-container .iw-nombre {
+    font-family: 'arial', sans-serif;
     font-size: 22px;
-    font-weight: 400;
-    padding: 10px;
-    background-color: red;
+    padding: 5px;
+    height: 36px;
+    background-color: darkgray;
     color: white;
-    margin: 0;
-    border-radius: 2px 2px 0 0;
+    font-weight: bold;
+
 }
+
+#iw-container .iw-tipo {
+    font-family: 'arial', sans-serif;
+    font-size: 12px;
+    padding: 5px;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+
+}
+#iw-container .iw-estado {
+    font-family: 'arial', sans-serif;
+    font-size: 12px;
+    padding: 5px;
+    background-color: magenta;
+    color: white;
+    font-weight: bold;
+
+}
+
+
 #iw-container .iw-content {
     font-size: 13px;
     line-height: 18px;
@@ -440,23 +447,13 @@ p {display: inline;}
     overflow-y: auto;
     overflow-x: hidden;
 }
-.iw-content img {
-    float: right;
-    margin: 0 5px 5px 10px;
-}
-.iw-subTitle {
-    font-size: 16px;
-    font-weight: 700;
-    padding: 5px 0;
-}
-.iw-bottom-gradient {
-    position: absolute;
-    width: 326px;
-    height: 25px;
-    bottom: 10px;
-    right: 18px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+
+
+
+#iw-container .iw-otros {
+    width:250px;
+    font-size: 13px;
+    line-height: 18px;
+    margin-right: 1px;
+    background-color: yellow;
 }
