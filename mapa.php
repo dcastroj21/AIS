@@ -58,6 +58,23 @@
 <body>
   <h3 style="font: bold 17px Arial, serif;color:black;background-color:transparent;width:350px;height:20px;" id="coordenadas"></h3>
 
+  <input type = "button" class="Botones_Mapa" id="BotonColores" value="Colores" onclick="MostrarColores();">
+
+<div id="colores" style="display:none" >
+  <table border="1">
+
+<tr>   <th style="text-align:center">Color</th>   <th style="text-align:center">Tipo</th>   </tr>
+
+<tr> <td style="background-color:green"></td> <td>Cargo</td></tr>
+<tr> <td style="background-color:red"></td> <td>Tanker</td></tr>
+<tr> <td style="background-color:yellow"></td> <td>Hsc</td></tr>
+<tr> <td style="background-color:darkblue"></td> <td>Passenger</td></tr>
+<tr> <td style="background-color:cyan"></td> <td>TugAndSpecial</td></tr>
+<tr> <td style="background-color:NavajoWhite"></td> <td>Fishing</td></tr>
+<tr> <td style="background-color:magenta"></td> <td>Pleasure</td></tr>
+<tr> <td style="background-color:gray"></td> <td>Unespecified</td></tr>
+</table>
+</div>
 <style type="text/css">
 
 table{    border-spacing: 10px;    border-collapse: collapse;}

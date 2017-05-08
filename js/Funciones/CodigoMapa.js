@@ -34,21 +34,21 @@ var Colores={ 'Cargo':'green',                            'Tanker':'red',
               'High speed craft - Hazardous category D':'yellow',     'Passenger - Hazardous category D':'darkblue',
               'High speed craft - RFU':'yellow',                      'Passenger - RFU':'darkblue',
 
-              'Pilot Vessel':'yellow',                'Sailing':'magenta',
-              'Search and Rescue vessel':'yellow',    'Pleasure Craft':'magenta',
-              'Tug':'yellow',
-              'Port Tender':'yellow',                 'Fishing':'NavajoWhite',
-              'Anti-pollution equipment':'yellow',
-              'Law Enforcement':'yellow',             'unespecified':'gray',
-              'Spare - Local Vessel':'yellow',
-              'Medical Transport':'yellow',           'Estacion':'red',
-              'Noncombatant ship according to RR Resolution':'yellow',
-              'Towing':'yellow',
-              'Towing: length exceeds 200m or breadth exceed':'yellow',
-              'Dredging or underwater ops':'yellow',
-              'Diving ops':'yellow',
-              'Military ops':'yellow',
-              'Reserved':'yellow',};
+              'Pilot Vessel':'cyan',                                      'Sailing':'magenta',
+              'Search and Rescue vessel':'cyan',                          'Pleasure Craft':'magenta',
+              'Tug':'cyan',
+              'Port Tender':'cyan',                                       'Fishing':'NavajoWhite',
+              'Anti-pollution equipment':'cyan',
+              'Law Enforcement':'cyan',                                   'unespecified':'gray',
+              'Spare - Local Vessel':'cyan',
+              'Medical Transport':'cyan',                                 'Estacion':'red',
+              'Noncombatant ship according to RR Resolution':'cyan',
+              'Towing':'cyan',
+              'Towing: length exceeds 200m or breadth exceed':'cyan',
+              'Dredging or underwater ops':'cyan',
+              'Diving ops':'cyan',
+              'Military ops':'cyan',
+              'Reserved':'cyan',};
 
 
 var circuloss=[];
@@ -64,6 +64,9 @@ var mapOptions ={
 map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 
 map.controls[google.maps.ControlPosition.RIGHT_TOP].push(  document.getElementById('coordenadas'));
+map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(  document.getElementById('colores'));
+map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(  document.getElementById('BotonColores'));
+
 
 google.maps.event.addListenerOnce(map, 'idle', function(){
     jQuery('.gm-style-iw').prev().remove();
@@ -175,6 +178,9 @@ function Markers(k){
 
 function CerrarTodo(){
 
+  document.getElementById('BotonColores').style.display='inline-block';
+  document.getElementById('colores').style.display='none';
+
   for (var o in Tabla){
 
     if (infowindow[o]) {infowindow[o].close();}
@@ -198,4 +204,10 @@ function Circulos(j){
   }
 
 
+}
+
+function MostrarColores(){
+
+ document.getElementById('BotonColores').style.display='none';
+ document.getElementById('colores').style.display='inline-block';
 }
