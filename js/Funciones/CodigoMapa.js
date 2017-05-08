@@ -85,7 +85,7 @@ map.addListener('mousemove', function(e) {
 
 console.log("nojoda");
 ActualizarId_Barcos();
-MarkerInterval = setInterval(function(){ActualizarId_Barcos()},5000);
+MarkerInterval = setInterval(function(){ActualizarId_Barcos()},1000);
 
 function ActualizarId_Barcos(){
 console.log("actualiza");
@@ -140,14 +140,9 @@ function Markers(k){
    MensajeInfo = '<div id="iw-container">' +
                     '<div class="iw-title">Porcelain Factory of Vista Alegre</div>' +
                     '<div class="iw-content">' +
-                      '<div class="iw-subTitle">History</div>' +
-                      '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
                       '<p>Founded in 1824, sely incorporated the liberal ideas of the century, having become "the first example of free enterprise" in Portugal.</p>' +
-                      '<div class="iw-subTitle">Contacts</div>' +
-                      '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
-                      '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
                     '</div>' +
-                    '<div class="iw-bottom-gradient"></div>' +
+
                   '</div>';
 
   // MensajeInfo =
@@ -188,17 +183,20 @@ function Markers(k){
               var iwBackground = iwOuter.prev();
               iwBackground.children(':nth-child(2)').css({'display' : 'none'});
               iwBackground.children(':nth-child(4)').css({'display' : 'none'});
-              iwOuter.parent().parent().css({left: '115px'});
-              iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
-              iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
-              iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
+              iwBackground.children(':nth-child(1)').css({'display' : 'none'});
+              // iwBackground.children(':nth-child(3)').css({'display' : 'none'});
+              // iwBackground.children(':nth-child(5)').css({'display' : 'none'});
+              // iwBackground.children(':nth-child(6)').css({'display' : 'none'});
+
+              // iwOuter.parent().parent().css({left: '115px'});
+              // iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;display:inline-block'});
+              // iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+              // iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px', 'z-index' : '1'});
               var iwCloseBtn = iwOuter.next();
-              iwCloseBtn.css({opacity: '1', right: '38px', top: '3px', border: '7px solid #48b5e9', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
-              if($('.iw-content').height() < 140){
-                $('.iw-bottom-gradient').css({display: 'none'});
-              }
+              iwCloseBtn.css({opacity: '1', right: '38px', top: '10px'});
+                // $('.iw-bottom-gradient').css({display: 'none'});
               // The API automatically applies 0.7 opacity to the button after the mouseout event. This function reverses this event to the desired value.
-              iwCloseBtn.mouseout(function(){      $(this).css({opacity: '1'});    });
+              // iwCloseBtn.mouseout(function(){      $(this).css({opacity: '1'});    });
             });
 
 
@@ -209,7 +207,7 @@ function Markers(k){
         }
   }
 
- // if (k==1 && unavez){ jQuery('.gm-style-iw').prev('div').remove(); infowindow[k].open(map,Marker_Real[k]); unavez=0;  }
+ if (k==1 && unavez){  infowindow[k].open(map,Marker_Real[k]); unavez=0;  }
  }
 var unavez=1;
 function CerrarTodo(){
