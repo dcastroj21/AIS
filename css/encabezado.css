@@ -402,7 +402,7 @@ p {display: inline;}
 
 .gm-style-iw {
     width: 250px !important;
-    height: 201px;
+    /*height: 201px;*/
     margin-top:4px;
     background-color: #fff;
 }
