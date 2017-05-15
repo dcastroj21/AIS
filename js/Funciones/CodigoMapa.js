@@ -197,7 +197,6 @@ function Markers(k){
 
   }else{
         if (Dt<1){
-          // console.log("local5");
 
           if (Tabla[k]['tipo']=='Estacion'){
 
@@ -222,9 +221,7 @@ function Markers(k){
         }
   }
 
- // if (k==1 && unavez){  infowindow[k].open(map,Marker_Real[k]); unavez=0;  }
  }
-// var unavez=1;
 function CerrarTodo(){
 
   document.getElementById('BotonColores').style.display='inline-block';
