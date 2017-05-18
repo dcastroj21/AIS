@@ -193,8 +193,13 @@ if (Tabla[k]['velocidad']==0){ Tabla[k]['curso']="N/A" }
 
 
   if (Marker_Real[k]){
+
+    if (Dt<1){
    Marker_Real[k].setPosition(LatLng[k]);
    infowindow[k].setContent(MensajeInfo);
+ }else{
+   Marker_Real[k].setMap(null);
+ }
 
   }else{
         if (Dt<1){
