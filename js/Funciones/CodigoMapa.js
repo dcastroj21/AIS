@@ -125,7 +125,7 @@ function Markers(k){
  //              "Fecha: "+Tabla[k]['fecha']+"<br>"+
  //              "Tiempo Transcurrido: "+Ht+"horas"+Mt+"minutos"+St+"segundos";
 
-if (Tabla[k]['velocidad']==0){ Tabla[k]['curso']="N/A" }
+if (Tabla[k]['velocidad']==0 || Tabla[k]['velocidad']==0.1){ Tabla[k]['curso']="N/A" }
 
    MensajeInfo = '<div id="iw-container">' +
                     '<div class="iw-nombre" >'+Tabla[k]['nombre']+'</div>' +
