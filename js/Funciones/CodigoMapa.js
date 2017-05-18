@@ -136,7 +136,7 @@ if (Tabla[k]['velocidad']==0 ){ Tabla[k]['curso']="N/A" }
                     '<table border="1" ><tr>'+
 
                     '<th style="width:83px;text-align:center;font-size:15px;color:black;">Velocidad</th>'+
-                    '<th style="width:83px;text-align:center;font-size:15px;color:black;">Rumbo</th>'+
+                    '<th style="width:83px;text-align:center;font-size:15px;color:black;">Curso(COG)</th>'+
                     '<th style="width:83px;text-align:center;font-size:15px;color:black;">Calado</th>'+
 
                     '</tr><tr> '+
