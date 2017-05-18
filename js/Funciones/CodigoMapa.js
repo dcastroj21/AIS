@@ -87,6 +87,7 @@ function ActualizarId_Barcos(){
     Entro=1;
  });
  }
+
 function Markers(k){
 
   dateNow = new Date().getTime();
@@ -110,7 +111,7 @@ function Markers(k){
   var St = FechaDiferencia.getSeconds();
 
 
- if(Colores[Tabla[k]['tipo']]==undefined){Tabla[k]['tipo']='unespecified';}
+ if(Colores[Tabla[k]['tipo']]==undefined){Tabla[k]['tipo']='unspecified';}
 
  // MensajeInfo = "Nombre: "+Tabla[k]['nombre']+"<br>"+
  //              "mmsi: "+Tabla[k]['mmsi']+"<br>"+
@@ -124,7 +125,7 @@ function Markers(k){
  //              "Fecha: "+Tabla[k]['fecha']+"<br>"+
  //              "Tiempo Transcurrido: "+Ht+"horas"+Mt+"minutos"+St+"segundos";
 
-
+if (Tabla[k]['velocidad']==0){ Tabla[k]['curso']="N/A" }
 
    MensajeInfo = '<div id="iw-container">' +
                     '<div class="iw-nombre" >'+Tabla[k]['nombre']+'</div>' +
